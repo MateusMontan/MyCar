@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "233462025216",
+    "firebase_url": "https://my-car-aea84-default-rtdb.firebaseio.com",
+    "project_id": "my-car-aea84",
+    "storage_bucket": "my-car-aea84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233462025216:android:6db87b67681f159215dce5",
+        "android_client_info": {
+          "package_name": "com.example.mycar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233462025216-p3tou0tvnntr8u1i6noh1ivmfi0npgr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMsd_rjg_gstwT1jIEvN_Qt-5OBuoT3JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233462025216-p3tou0tvnntr8u1i6noh1ivmfi0npgr9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
