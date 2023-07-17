@@ -1,14 +1,16 @@
-package com.example.mycar;
+package com.example.mycar.tela.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class TelaCadastro extends AppCompatActivity {
+import com.example.mycar.R;
+
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_cadastro);
+        setContentView(R.layout.activity_login);
     }
 }
