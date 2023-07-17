@@ -2,8 +2,16 @@ package com.example.mycar.classes;
 
 public class Servicos {
     private String nome;
-    private String telefone;
     private String whatsapp;
+
+    public Servicos(){
+
+    }
+    public Servicos(String nome, String whatsapp) {
+        this.nome = nome;
+        this.whatsapp = whatsapp;
+    }
+
 
     public String getNome() {
         return nome;
@@ -13,13 +21,6 @@ public class Servicos {
         this.nome = nome;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
 
     public String getWhatsapp() {
         return whatsapp;
