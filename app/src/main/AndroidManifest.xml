@@ -31,22 +31,24 @@
 
         <activity
             android:name=".tela.Servicos.Info_Servico"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_info_servico" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".tela.Login.Cadastro"
+            android:exported="false" >
+
+        </activity>
+        <activity
+            android:name=".tela.Servicos.ListaServicos"
             android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".tela.Login.Carregamento"
