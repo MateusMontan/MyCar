@@ -1,8 +1,8 @@
 package com.example.mycar.classes;
 
 public class Servicos {
-    private String nome;
-    private String whatsapp;
+    public String nome;
+    public String whatsapp;
 
     public Servicos(){
 
