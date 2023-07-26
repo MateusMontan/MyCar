@@ -29,16 +29,17 @@ public class ListaServicos extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("servicos");
-
-
+        services = new ArrayList<>();
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                Servicos value = dataSnapshot.getValue(Servicos.class);
-                //services.add(value);
-                Log.w("TESTE",value.getNome() + value.getWhatsapp());
+                for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
+                    Servicos value = servicoSnapshot.getValue(Servicos.class);
+                    if (value != null) {
+                        services.add(new Servicos(value.getNome(),value.getWhatsapp()));
+                    }
+                }
+                atualizaAdapter();
             }
 
             @Override
@@ -47,10 +48,11 @@ public class ListaServicos extends AppCompatActivity {
                 Log.w("TESTE", "Failed to read value.", error.toException());
             }
         });
+    }
 
-
-        //AdapterServicos adapter = new AdapterServicos(this, services);
-        //ListView listViewServices = findViewById(R.id.listViewServices);
-        //listViewServices.setAdapter(adapter);
+    public void atualizaAdapter(){
+        AdapterServicos adapter = new AdapterServicos(this, services);
+        ListView listViewServices = findViewById(R.id.listViewServices);
+        listViewServices.setAdapter(adapter);
     }
 }

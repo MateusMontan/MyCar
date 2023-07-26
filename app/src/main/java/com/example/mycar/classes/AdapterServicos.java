@@ -34,7 +34,7 @@ public class AdapterServicos extends ArrayAdapter<Servicos> {
         // Configurar o botão do layout
         Button btnService = convertView.findViewById(R.id.Btn1);
 
-        btnService.setText("TESTE");
+        btnService.setText(service.getNome());
         btnService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
