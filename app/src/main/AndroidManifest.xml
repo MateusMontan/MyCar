@@ -26,12 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".tela.Login.Login"
-            android:exported="false" />
-        <activity
-            android:name=".tela.Login.Cadastro"
-            android:exported="false"></activity>
-        <activity
-            android:name=".tela.Servicos.ListaServicos"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,14 +34,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".tela.Login.Cadastro"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".tela.Servicos.ListaServicos"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".tela.Login.Carregamento"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MenuPrincipal"
-            android:exported="false" />
+            android:exported="false"/>
     </application>
 
 </manifest>

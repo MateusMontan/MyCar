@@ -2,6 +2,7 @@ package com.example.mycar.classes;
 
 // ServiceAdapter.java
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.example.mycar.R;
+import com.example.mycar.tela.Servicos.Info_Servicos;
+import com.example.mycar.tela.Usuario.ListaAutomoveis;
 
 import java.util.List;
 
@@ -35,8 +38,8 @@ public class AdapterServicos extends ArrayAdapter<Servicos> {
         btnService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Coloque aqui o código para a ação do botão quando ele for clicado.
-                // Por exemplo, pode ser a abertura de uma nova atividade ou qualquer ação desejada.
+                Intent intent = new Intent(v.getContext(), Info_Servicos.class);
+                v.getContext().startActivity(intent);
             }
         });
 
