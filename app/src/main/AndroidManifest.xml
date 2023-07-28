@@ -44,9 +44,14 @@
         <activity
             android:name=".tela.Login.Carregamento"
             android:exported="false" />
-        <activity
-            android:name=".SplashScreen"
-            android:exported="false"/>
+        <activity android:name=".SplashScreen"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MenuPrincipal"
             android:exported="false"/>
