@@ -1,5 +1,7 @@
 package com.example.mycar.tela.Servicos;
 
+import static com.example.mycar.classes.Variaveis.database;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -27,7 +29,8 @@ public class ListaServicos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_servicos);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database =  FirebaseDatabase.getInstance();
+
         DatabaseReference myRef = database.getReference("servicos");
         services = new ArrayList<>();
         myRef.addValueEventListener(new ValueEventListener() {
