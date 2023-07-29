@@ -48,6 +48,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="false"/>
+
         <activity
             android:name=".MenuPrincipal"
             android:exported="false"/>
