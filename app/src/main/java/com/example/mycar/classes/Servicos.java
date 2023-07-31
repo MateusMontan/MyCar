@@ -1,6 +1,6 @@
 package com.example.mycar.classes;
 
-public class Servicos {
+public class Servicos implements Cloneable{
     public String nome;
     public String whatsapp;
 
@@ -28,5 +28,14 @@ public class Servicos {
 
     public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
+    }
+
+    public Servicos clone() {
+        try {
+            return (Servicos) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Tratar a exceção, se necessário
+            return null;
+        }
     }
 }

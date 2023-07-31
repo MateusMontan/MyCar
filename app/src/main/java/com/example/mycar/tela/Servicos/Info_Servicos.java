@@ -1,5 +1,7 @@
 package com.example.mycar.tela.Servicos;
 
+import static com.example.mycar.classes.Variaveis.servicoescolhido;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,6 +15,9 @@ public class Info_Servicos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_servicos);
         setTitle("Informações");
+        if(servicoescolhido != null){
+            setTitle(servicoescolhido.getNome());
+        }
 
     }
 }
