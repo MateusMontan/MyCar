@@ -23,6 +23,7 @@ public class Cadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
+        setTitle("Cadsatro");
 
         setTitle("Cadastro");
 

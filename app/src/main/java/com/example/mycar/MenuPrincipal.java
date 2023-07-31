@@ -18,9 +18,11 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+        setTitle("Menu Principal");
 
         Button buttonServico = findViewById(R.id.buttonServico);
         Button buttonUsuario = findViewById(R.id.buttonUsuario);
+
 
         buttonServico.setOnClickListener(new View.OnClickListener() {
             @Override
