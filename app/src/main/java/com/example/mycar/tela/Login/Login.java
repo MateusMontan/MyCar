@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setTitle("Tela de Login");
 
         // Encontre os botões por seus IDs
         Button botaoTempSplash = findViewById(R.id.botaoTempSplash);

@@ -12,6 +12,7 @@ public class Info_Servicos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_servicos);
+        setTitle("Informações");
 
     }
 }
