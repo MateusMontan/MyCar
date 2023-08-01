@@ -1,6 +1,8 @@
 package com.example.mycar.classes;
 
 // ServiceAdapter.java
+import static com.example.mycar.classes.Variaveis.servicoescolhido;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -39,6 +41,7 @@ public class AdapterServicos extends ArrayAdapter<Servicos> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Info_Servicos.class);
+                servicoescolhido = service.clone();
                 v.getContext().startActivity(intent);
             }
         });
