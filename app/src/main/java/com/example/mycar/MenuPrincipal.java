@@ -12,8 +12,6 @@ import com.example.mycar.tela.Usuario.ListaAutomoveis;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    SetTitle("string");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
