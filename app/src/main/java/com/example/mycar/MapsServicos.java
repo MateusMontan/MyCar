@@ -46,6 +46,12 @@ public class MapsServicos extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        // Define o nível de zoom desejado (por exemplo, 15.0f para um zoom moderado)
+        float zoomLevel = 20.0f;
+
+        // Move a câmera para a posição especificada com o nível de zoom desejado
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel));
     }
+
 }
