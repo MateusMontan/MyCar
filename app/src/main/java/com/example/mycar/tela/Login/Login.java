@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.example.mycar.MenuPrincipal;
 import com.example.mycar.R;
 import com.example.mycar.SplashScreen;
+import com.example.mycar.classes.Variaveis;
 import com.example.mycar.tela.Servicos.Info_Servicos;
 import com.example.mycar.tela.Servicos.ListaServicos;
 import com.example.mycar.tela.Usuario.Info_Automoveis;
@@ -17,6 +18,7 @@ import com.example.mycar.tela.Usuario.ListaAutomoveis;
 import com.example.mycar.tela.Usuario.MenuUsuario;
 
 public class Login extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

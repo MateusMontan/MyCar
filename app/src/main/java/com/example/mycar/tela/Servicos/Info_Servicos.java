@@ -1,5 +1,7 @@
 package com.example.mycar.tela.Servicos;
 
+import static com.example.mycar.classes.Variaveis.servicoescolhido;
+
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
@@ -22,7 +24,6 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     private GoogleMap mMap;
     private TextView textView;
     private DatabaseReference mDatabase;
-    private String nomeLista; // Variável para armazenar o nome da lista de serviços
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,10 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         setContentView(R.layout.activity_info_servicos);
 
         textView = findViewById(R.id.textView);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("servicos");
+        setTitle(servicoescolhido.getNome());
 
-        nomeLista = getIntent().getStringExtra("nomeLista");
+        textView.setText(servicoescolhido.getWhatsapp());
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -46,12 +48,10 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         mMap = googleMap;
 
         LatLng sydney = new LatLng(-21.540535205935736, -42.64215893165753);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Zaquine Pneus"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title(servicoescolhido.getNome()));
 
-        float zoomLevel = 20.0f;
+        float zoomLevel = 17.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel));
 
-        // Atualizando o TextView com o nome da lista
-        textView.setText("Nome da Lista: " + nomeLista);
     }
 }
