@@ -11,6 +11,8 @@
         android:layout_width="181dp"
         android:layout_height="0dp"
         android:text="Button"
+        android:textColor="@color/white2"
+        android:backgroundTint="@color/blue2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="6dp" />

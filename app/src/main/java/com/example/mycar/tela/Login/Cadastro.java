@@ -4,6 +4,7 @@ import static com.example.mycar.classes.Variaveis.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,15 @@ public class Cadastro extends AppCompatActivity {
         EditText editPassword = findViewById(R.id.editSenha);
 
         Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
+
+        Button botaoLogin = findViewById(R.id.buttonLogin);
+        botaoLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Cadastro.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
         botaoEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +74,6 @@ public class Cadastro extends AppCompatActivity {
 
         // Cria o novo usuário com os campos fornecidos
         Usuario novoUsuario = new Usuario(nome, email, senha);
-
 
         // Insere o novo usuário com a chave personalizada
         usuariosRef.child(new GeradorDeChave().gerarChaveSegura()).setValue(novoUsuario);;
