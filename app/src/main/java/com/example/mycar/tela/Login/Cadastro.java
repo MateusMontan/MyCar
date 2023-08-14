@@ -2,16 +2,23 @@ package com.example.mycar.tela.Login;
 
 import static com.example.mycar.classes.Variaveis.database;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mycar.R;
+import com.example.mycar.classes.Autenticador;
 import com.example.mycar.classes.GeradorDeChave;
 import com.example.mycar.classes.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,17 +26,22 @@ public class Cadastro extends AppCompatActivity {
 
     private DatabaseReference usuariosRef;
 
+    private Usuario usuario;
+
+    private FirebaseAuth firebaseAuth;
+
+    private EditText editNome, editEmail, editPassword;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
-        setTitle("Cadsatro");
-
         setTitle("Cadastro");
 
-        EditText editNome = findViewById(R.id.editNome);
-        EditText editEmail = findViewById(R.id.editEmail);
-        EditText editPassword = findViewById(R.id.editSenha);
+        editNome = findViewById(R.id.editNome);
+        editEmail = findViewById(R.id.editEmail);
+        editPassword = findViewById(R.id.editSenha);
 
         Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
 
@@ -37,37 +49,42 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //CRIAR VERIFICAÇÃO DE CAMPO - VERIFICAR CARACTERES
-                database =  FirebaseDatabase.getInstance();
-
-                DatabaseReference myRef = database.getReference("usuarios");
-
-                adicionarNovoUsuario(
-                        editNome.getText().toString(),
-                        editEmail.getText().toString(),
-                        editPassword.getText().toString()
-                );
-
-
+                if(validarCampos()){
+                    criarUsuario();
+                }
 
             }
         });
 
     }
 
-    private void adicionarNovoUsuario(String nome, String email, String senha) {
-        // Obtém a referência ao nó "usuarios"
-        usuariosRef = FirebaseDatabase.getInstance().getReference().child("usuarios");
+    private void criarUsuario() {
+        Usuario usuario = new Usuario();
+        usuario.setNome(editNome.getText().toString());
+        usuario.setEmail(editEmail.getText().toString());
+        usuario.setSenha(editPassword.getText().toString());
 
-        // Gera uma nova chave única para o novo usuário
-        String novaChaveUsuario = usuariosRef.push().getKey();
+        firebaseAuth = Autenticador.FirebaseAutenticar();
 
-        // Cria o novo usuário com os campos fornecidos
-        Usuario novoUsuario = new Usuario(nome, email, senha);
+        firebaseAuth.createUserWithEmailAndPassword(
+                usuario.getEmail(),
+                usuario.getSenha()
+        ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(Cadastro.this, "Cadastro concluido!", Toast.LENGTH_SHORT).show();
+                }else{
+
+                }
+            }
+        });
+    }
+
+    private boolean validarCampos(){
 
 
-        // Insere o novo usuário com a chave personalizada
-        usuariosRef.child(new GeradorDeChave().gerarChaveSegura()).setValue(novoUsuario);;
 
+        return true;
     }
 }
