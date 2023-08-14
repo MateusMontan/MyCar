@@ -10,8 +10,12 @@
         android:id="@+id/buttonServico"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="212dp"
+        android:backgroundTint="@color/blue2"
         android:text="Serviços"
+        android:textColor="@color/white2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,7 +23,10 @@
         android:id="@+id/buttonUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/blue2"
         android:text="Usuário"
+        android:textColor="@color/white2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
