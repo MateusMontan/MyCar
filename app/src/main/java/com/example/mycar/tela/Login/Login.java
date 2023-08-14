@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
         setTitle("Tela de Login");
 
         // Encontre os botões por seus IDsR.id.botaoTempSpla
-                Button botaoTempSplash = findViewById(sh);
+        Button botaoTempSplash = findViewById(R.id.botaoTempSplash);
         Button botaoTempCadastro = findViewById(R.id.botaoTempCadastro);
         Button botaoTempCarregamento = findViewById(R.id.botaoTempCarregamento);
         Button botaoInfoServicos = findViewById(R.id.botaoInfoServicos);
