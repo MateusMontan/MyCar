@@ -85,7 +85,7 @@ public class Cadastro extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(Cadastro.this, "Cadastro concluido!", Toast.LENGTH_SHORT).show();
                 }else{
-
+                    Toast.makeText(Cadastro.this, "Algo inesperado aconteceu!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
