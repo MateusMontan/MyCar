@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,7 +43,20 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
 
         textView.setText(servicoescolhido.getWhatsapp());
 
-        openWhatsApp(iconImageView);
+        iconImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String numerotelefone = servicoescolhido.getWhatsapp();
+                String mensagem = "Fala cmg bb !";
+                String mensagemcodificada = Uri.encode(mensagem);
+                String url = "https://wa.me/+" + numerotelefone + "?text=" + mensagemcodificada;
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+
+                startActivity(intent);
+            }
+        });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -58,7 +72,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng sydney = new LatLng(-21.540535205935736, -42.64215893165753);
+        LatLng sydney = new LatLng(servicoescolhido.getX(), servicoescolhido.getY());
         mMap.addMarker(new MarkerOptions().position(sydney).title(servicoescolhido.getNome()));
 
         float zoomLevel = 17.0f;
@@ -67,17 +81,6 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     }
 
 
-    public void openWhatsApp(ImageView whatsapp) {
-        String numerotelefone = servicoescolhido.getWhatsapp();
-        String mensagem = "Olá, estou procurando seu serviço!";
-        String mensagemcodificada = Uri.encode(mensagem);
-        String url = "https://wa.me/" + numerotelefone + "?text=" + mensagemcodificada;
 
-
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-
-        startActivity(intent);
-    }
 
 }
