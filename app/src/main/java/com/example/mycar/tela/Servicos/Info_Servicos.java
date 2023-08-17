@@ -72,7 +72,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng sydney = new LatLng(servicoescolhido.getX(), servicoescolhido.getY());
+        LatLng sydney = new LatLng(Double.parseDouble(servicoescolhido.getX()), Double.parseDouble(servicoescolhido.getY()));
         mMap.addMarker(new MarkerOptions().position(sydney).title(servicoescolhido.getNome()));
 
         float zoomLevel = 17.0f;

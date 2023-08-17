@@ -4,33 +4,35 @@ public class Servicos implements Cloneable{
     private String nome;
     private String whatsapp;
 
-    private double x;
-    private double y;
+    private String x;
+    private String y;
 
-    public void setX(double x) {
+    public void setX(String x) {
         this.x = x;
     }
 
 
-    public double getX() {
+    public String getX() {
         return x;
     }
 
-    public void setY(double y) {
+    public void setY(String y) {
         this.y = y;
     }
 
 
-    public double getY() {
+    public String getY() {
         return y;
     }
 
     public Servicos(){
 
     }
-    public Servicos(String nome, String whatsapp) {
+    public Servicos(String nome, String whatsapp, String x, String y) {
         this.nome = nome;
         this.whatsapp = whatsapp;
+        this.x = x;
+        this.y = y;
     }
 
 

@@ -40,7 +40,7 @@ public class ListaServicos extends AppCompatActivity {
                 for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
                     Servicos value = servicoSnapshot.getValue(Servicos.class);
                     if (value != null) {
-                        services.add(new Servicos(value.getNome(),value.getWhatsapp()));
+                        services.add(new Servicos(value.getNome(),value.getWhatsapp(),value.getX(), value.getY()));
                     }
                 }
                 atualizaAdapter();
