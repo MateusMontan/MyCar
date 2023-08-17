@@ -7,15 +7,27 @@
     tools:context=".tela.Servicos.Info_Servicos">
 
     <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="113dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:contentDescription="Telefone Icon"
+        app:srcCompat="@drawable/chamada"
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="113dp"
         android:layout_height="92dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="48dp"
         android:clickable="true"
         android:contentDescription="WhatsApp Icon"
         android:onClick="openWhatsApp"
         android:src="@drawable/whatsapp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 

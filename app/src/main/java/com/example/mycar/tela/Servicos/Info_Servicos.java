@@ -30,6 +30,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     private GoogleMap mMap;
     private TextView textView;
     private ImageView iconImageView;
+    private ImageView imageView3;
     private DatabaseReference mDatabase;
 
     @Override
@@ -58,13 +59,19 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
             }
         });
 
+        imageView3.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                String numeroTelefone = servicoescolhido.getWhatsapp();
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + numeroTelefone));
+                startActivity(intent);
+            }
+        });
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
-
-
 
     }
 
