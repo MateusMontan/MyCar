@@ -10,12 +10,11 @@
         android:id="@+id/imageView3"
         android:layout_width="113dp"
         android:layout_height="92dp"
-        android:layout_marginTop="48dp"
         android:clickable="true"
         android:contentDescription="Telefone Icon"
-        app:srcCompat="@drawable/chamada"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="48dp" />
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintStart_toEndOf="@+id/iconImageView"
+        app:srcCompat="@drawable/chamada" />
 
     <ImageView
         android:id="@+id/iconImageView"

@@ -40,6 +40,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
 
         textView = findViewById(R.id.textView);
         iconImageView = findViewById(R.id.iconImageView);
+        imageView3 = findViewById(R.id.imageView3);
         setTitle(servicoescolhido.getNome());
 
         textView.setText(servicoescolhido.getWhatsapp());

@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
         Button botaoInfoAutomoveis = findViewById(R.id.botaoInfoAutomoveis);
         Button botaoListaAutomoveis = findViewById(R.id.botaoListaAutomoveis);
         Button botaoMenuUsuario = findViewById(R.id.botaoMenuUsuario);
-        Button botaoMenuPrincipal = findViewById(R.id.botaoMenuPrincipal);
+
 
         // Defina o OnClickListener para cada botão
         botaoTempSplash.setOnClickListener(new View.OnClickListener() {
@@ -98,14 +98,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, MenuUsuario.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoMenuPrincipal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });

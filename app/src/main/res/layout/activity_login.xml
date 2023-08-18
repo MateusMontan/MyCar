@@ -8,71 +8,61 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/botaoTempSplash"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Splash"
-            />
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:text="Splash" />
 
         <Button
             android:id="@+id/botaoTempCadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastro"
-            />
+            android:text="Cadastro" />
 
         <Button
             android:id="@+id/botaoTempCarregamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Carregamento"
-            />
+            android:text="Carregamento" />
 
         <Button
             android:id="@+id/botaoInfoServicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="InfoServicos"
-            />
+            android:text="InfoServicos" />
 
         <Button
             android:id="@+id/botaoListaServicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ListaServicos"
-            />
+            android:text="ListaServicos" />
 
         <Button
             android:id="@+id/botaoInfoAutomoveis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="InfoAutomoveis"
-            />
+            android:text="InfoAutomoveis" />
 
         <Button
             android:id="@+id/botaoListaAutomoveis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ListaAutomoveis"
-            />
+            android:text="ListaAutomoveis" />
 
         <Button
             android:id="@+id/botaoMenuUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MenuUsuario"
-            />
+            android:text="MenuUsuario" />
 
-        <Button
-            android:id="@+id/botaoMenuPrincipal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MenuPrincipal"
-            />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

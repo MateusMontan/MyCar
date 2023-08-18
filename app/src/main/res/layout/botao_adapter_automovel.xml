@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tela.Login.Carregamento">
+    android:layout_gravity="center"
+    >
+
 
     <Button
-        android:id="@+id/botaoMenuPrincipal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MenuPrincipal"
+        android:id="@+id/Btn1"
+        android:layout_width="181dp"
+        android:layout_height="0dp"
+        android:text="Button"
+        android:textColor="@color/white2"
+        android:backgroundTint="@color/blue2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="6dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
