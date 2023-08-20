@@ -27,7 +27,7 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
 
         // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter_automovel, parent, false);
         }
 
         // Configurar o botão do layout
