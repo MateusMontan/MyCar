@@ -29,7 +29,7 @@ public class AdapterServicos extends ArrayAdapter<Servicos> {
 
         // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter_servicos, parent, false);
         }
 
         // Configurar o botão do layout
