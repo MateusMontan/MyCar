@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.mycar.MenuPrincipal;
 import com.example.mycar.R;
 import com.example.mycar.SplashScreen;
-import com.example.mycar.classes.Variaveis;
 import com.example.mycar.tela.Servicos.Info_Servicos;
 import com.example.mycar.tela.Servicos.ListaServicos;
 import com.example.mycar.tela.Usuario.Info_Automoveis;
@@ -25,10 +23,12 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("Tela de Login");
+        Button botaoLogin = findViewById(R.id.buttonLogar);
+        Button botaoCadastro = findViewById(R.id.botaoCadastro);
+
 
         // Encontre os botões por seus IDsR.id.botaoTempSpla
         Button botaoTempSplash = findViewById(R.id.botaoTempSplash);
-        Button botaoTempCadastro = findViewById(R.id.botaoTempCadastro);
         Button botaoTempCarregamento = findViewById(R.id.botaoTempCarregamento);
         Button botaoInfoServicos = findViewById(R.id.botaoInfoServicos);
         Button botaoListaServicos = findViewById(R.id.botaoListaServicos);
@@ -36,6 +36,20 @@ public class Login extends AppCompatActivity {
         Button botaoListaAutomoveis = findViewById(R.id.botaoListaAutomoveis);
         Button botaoMenuUsuario = findViewById(R.id.botaoMenuUsuario);
 
+        botaoLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Cadastro.class);
+                startActivity(intent);
+            }
+        });
+        botaoCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Cadastro.class);
+                startActivity(intent);
+            }
+        });
 
         // Defina o OnClickListener para cada botão
         botaoTempSplash.setOnClickListener(new View.OnClickListener() {
@@ -46,13 +60,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        botaoTempCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Cadastro.class);
-                startActivity(intent);
-            }
-        });
+
 
         botaoTempCarregamento.setOnClickListener(new View.OnClickListener() {
             @Override
