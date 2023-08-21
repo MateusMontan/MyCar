@@ -18,19 +18,18 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
         setTitle("Menu Principal");
 
-        Button buttonServico = findViewById(R.id.buttonServico);
+//        Button customButton = findViewById(R.id.custom_button);
         Button buttonUsuario = findViewById(R.id.buttonUsuario);
 
-
-        buttonServico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), ListaServicos.class);
-                v.getContext().startActivity(intent);
-
-            }
-        });
+//        customButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(v.getContext(), ListaServicos.class);
+//                v.getContext().startActivity(intent);
+//
+//            }
+//        });
 
         buttonUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
