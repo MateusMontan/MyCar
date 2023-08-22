@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MenuPrincipal">
 
+<<<<<<< Updated upstream
     <RelativeLayout
         android:id="@+id/buttonServico"
         android:layout_width="wrap_content"
@@ -20,20 +21,38 @@
     app:layout_constraintHorizontal_bias="0.5">
 
 </RelativeLayout>
+=======
+    <Button
+        android:id="@+id/buttonServico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue1"
+        android:drawableRight="@drawable/tamanho_do_icone1"
+        android:text="Serviços"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+>>>>>>> Stashed changes
 
     <Button
         android:id="@+id/buttonUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_marginTop="176dp"
+=======
+>>>>>>> Stashed changes
         android:backgroundTint="@color/blue2"
+        android:drawableRight="@drawable/tamanho_do_icone2"
         android:text="Usuário"
-        android:textColor="@color/white2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonServico" />
 
+<<<<<<< Updated upstream
     <include
 layout="@layout/custom_button_layout"
 android:layout_width="0dp"
@@ -44,3 +63,32 @@ android:layout_width="0dp"
     app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <Button
+        android:id="@+id/Button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#7586DF"
+        android:drawableRight="@drawable/tamanho_do_icone3"
+        android:text="Button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button2">
+
+    </Button>
+
+    <Button
+        android:id="@+id/Button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/blue2"
+        android:drawableRight="@drawable/tamanho_do_icone4"
+        android:text="Button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUsuario" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> Stashed changes
