@@ -1,5 +1,6 @@
 package com.example.mycar.classes;
 
+import static com.example.mycar.classes.Variaveis.automovelescolhido;
 // ServiceAdapter.java
 import android.content.Context;
 import android.content.Intent;
@@ -39,6 +40,7 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Info_Automoveis.class);
+                automovelescolhido = service.clone();
                 v.getContext().startActivity(intent);
             }
         });

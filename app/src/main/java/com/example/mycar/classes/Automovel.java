@@ -71,4 +71,13 @@ public class Automovel {
                 ", placa='" + placa + '\'' +
                 '}';
     }
+
+    public Automovel clone() {
+        try {
+            return (Automovel) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Tratar a exceção, se necessário
+            return null;
+        }
+    }
 }
