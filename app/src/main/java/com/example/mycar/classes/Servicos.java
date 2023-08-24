@@ -44,6 +44,7 @@ public class Servicos implements Cloneable{
         this.whatsapp = whatsapp;
         this.x = x;
         this.y = y;
+        this.icon = icon;
     }
 
 
