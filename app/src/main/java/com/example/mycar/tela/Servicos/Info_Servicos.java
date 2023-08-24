@@ -3,7 +3,6 @@ package com.example.mycar.tela.Servicos;
 import static com.example.mycar.classes.Variaveis.servicoescolhido;
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,11 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -31,6 +26,8 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     private TextView textView;
     private ImageView iconImageView;
     private ImageView imageView3;
+    private ImageView imageLogo;
+
     private DatabaseReference mDatabase;
 
     @Override
@@ -41,9 +38,12 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         textView = findViewById(R.id.textView);
         iconImageView = findViewById(R.id.iconImageView);
         imageView3 = findViewById(R.id.imageView3);
+        imageLogo = findViewById(R.id.imageLogo);
         setTitle(servicoescolhido.getNome());
 
         textView.setText(servicoescolhido.getWhatsapp());
+        imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
+
 
         iconImageView.setOnClickListener(new View.OnClickListener() {
             @Override
