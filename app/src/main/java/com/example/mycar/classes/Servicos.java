@@ -7,6 +7,8 @@ public class Servicos implements Cloneable{
     private String x;
     private String y;
 
+    private String icon;
+
     public void setX(String x) {
         this.x = x;
     }
@@ -25,10 +27,19 @@ public class Servicos implements Cloneable{
         return y;
     }
 
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+
+    public String getIcon() {
+        return icon;
+    }
+
     public Servicos(){
 
     }
-    public Servicos(String nome, String whatsapp, String x, String y) {
+    public Servicos(String icon, String nome, String whatsapp, String x, String y) {
         this.nome = nome;
         this.whatsapp = whatsapp;
         this.x = x;
