@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 import com.example.mycar.MenuPrincipal;
@@ -22,20 +23,11 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
-        setTitle("Tela de Login");
         Button botaoLogin = findViewById(R.id.buttonLogar);
         Button botaoCadastro = findViewById(R.id.botaoCadastro);
 
-
-        // Encontre os botões por seus IDsR.id.botaoTempSpla
-        Button botaoTempSplash = findViewById(R.id.botaoTempSplash);
-        Button botaoTempCarregamento = findViewById(R.id.botaoTempCarregamento);
-        Button botaoInfoServicos = findViewById(R.id.botaoInfoServicos);
-        Button botaoListaServicos = findViewById(R.id.botaoListaServicos);
-        Button botaoInfoAutomoveis = findViewById(R.id.botaoInfoAutomoveis);
-        Button botaoListaAutomoveis = findViewById(R.id.botaoListaAutomoveis);
-        Button botaoMenuUsuario = findViewById(R.id.botaoMenuUsuario);
 
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,63 +44,5 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Defina o OnClickListener para cada botão
-        botaoTempSplash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, SplashScreen.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-        botaoTempCarregamento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Carregamento.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoInfoServicos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Info_Servicos.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoListaServicos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, ListaServicos.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoInfoAutomoveis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Info_Automoveis.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoListaAutomoveis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, ListaAutomoveis.class);
-                startActivity(intent);
-            }
-        });
-
-        botaoMenuUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, MenuUsuario.class);
-                startActivity(intent);
-            }
-        });
     }
 }
