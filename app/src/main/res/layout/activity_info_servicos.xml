@@ -113,8 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Praça da Bandeira"
-        app:layout_constraintTop_toBottomOf="@+id/End2"
-        tools:layout_editor_absoluteX="24dp" />
+        app:layout_constraintStart_toStartOf="@+id/End2"
+        app:layout_constraintTop_toBottomOf="@+id/End2" />
 
     <TextView
         android:id="@+id/TextoHorario"
@@ -161,7 +161,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.439"
