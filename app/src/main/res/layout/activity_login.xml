@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Login"
-        android:textSize="24dp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:id="@+id/textEmailLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="76dp"
         android:text="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
@@ -77,12 +77,13 @@
 
     <Button
         android:id="@+id/botaoCadastro"
-        android:layout_width="298dp"
-        android:layout_height="58dp"
+        android:layout_width="299dp"
+        android:layout_height="57dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#004E4E4E"
-        android:text="Cadastre-se"
         android:background="@drawable/border_blue"
+        android:backgroundTint="#004E4E4E"
+        android:text="Cadastrar"
+        android:textAlignment="center"
         android:textColor="@color/blue1"
         android:textSize="16sp"
         app:cornerRadius="15dp"
@@ -101,6 +102,7 @@
     <LinearLayout
         android:id="@+id/socialicons"
         android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,21 +112,21 @@
             android:id="@+id/google_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="28dp"
+            android:layout_margin="15dp"
             android:src="@drawable/google" />
 
         <ImageView
             android:id="@+id/facebook_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="28dp"
+            android:layout_margin="15dp"
             android:src="@drawable/fb" />
 
         <ImageView
             android:id="@+id/twitter_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="28dp"
+            android:layout_margin="15dp"
             android:src="@drawable/twitter" />
 
 
