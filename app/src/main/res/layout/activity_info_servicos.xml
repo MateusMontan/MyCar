@@ -39,7 +39,7 @@
         android:layout_height="50dp"
         android:contentDescription="Telefone Icon"
         app:srcCompat="@drawable/chamada"
-        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteX="104dp"
         tools:layout_editor_absoluteY="267dp" />
 
     <ImageView
@@ -131,6 +131,25 @@
         android:textSize="20sp"
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="66dp" />
+
+    <TextView
+        android:id="@+id/Whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Whatsapp
+"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <TextView
+        android:id="@+id/Contato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="256dp"
+        android:text="Contato"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="321dp" />
 
     <fragment
         android:id="@+id/map"
