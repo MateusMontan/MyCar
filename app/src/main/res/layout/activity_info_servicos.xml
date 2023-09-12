@@ -8,6 +8,18 @@
     android:background="@android:color/white"
     tools:context=".tela.Servicos.Info_Servicos">
 
+
+    <TextView
+        android:id="@+id/diasdasemana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Segunda-Feira \t08:00 às 18:00 \nTerça-Feira \t\t\t08:00 às 18:00\nQuarta-Feira \t\t08:00 às 18:00\nQuinta-Feira \t\t08:00 às 18:00\nSexta-Feira \t\t\t08:00 às 18:00\nSábado \t\t\t\t\t\t\t08:00 às 12:00"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/TextoHorario"
+        tools:layout_editor_absoluteX="16dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,53 +29,119 @@
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="Telefone Icon"
-        app:layout_constraintBottom_toTopOf="@+id/map"
-        app:layout_constraintStart_toStartOf="@+id/iconImageView"
-        app:layout_constraintTop_toBottomOf="@+id/iconImageView"
-        app:layout_constraintVertical_bias="0.073"
-        app:srcCompat="@drawable/chamada" />
+        app:srcCompat="@drawable/chamada"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="267dp" />
 
     <ImageView
         android:id="@+id/iconImageView"
-        android:layout_width="72dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="WhatsApp Icon"
         android:src="@drawable/whatsapp"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="267dp" />
 
     <ImageView
         android:id="@+id/imageLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="100dp"
-        android:maxHeight="100dp"
-        android:layout_marginTop="136dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="12dp"
+        android:maxWidth="8dp"
+        android:maxHeight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/caverninha" />
+
+    <TextView
+        android:id="@+id/TextoEndereço"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Endereço"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/LocalIcon"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/LocalIcon"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="WhatsApp Icon"
+        android:src="@drawable/local"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/End1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="50dp"
+        android:text="Rua Romualdo Joaquim de Souza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="@+id/End2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/End3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Praça da Bandeira"
+        app:layout_constraintStart_toStartOf="@+id/End2"
+        app:layout_constraintTop_toBottomOf="@+id/End2" />
+
+    <TextView
+        android:id="@+id/End2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="nª 66, Apt. 202"
+        app:layout_constraintStart_toEndOf="@+id/LocalIcon"
+        app:layout_constraintTop_toBottomOf="@+id/End1" />
+
+    <TextView
+        android:id="@+id/TextoHorario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horário de Funcionamento"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="66dp" />
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="200dp"
+        android:layout_width="360dp"
         android:layout_height="200dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 
