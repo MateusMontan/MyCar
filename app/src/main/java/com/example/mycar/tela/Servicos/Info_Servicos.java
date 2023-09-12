@@ -42,7 +42,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         setTitle(servicoescolhido.getNome());
 
         textView.setText(servicoescolhido.getWhatsapp());
-        imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
+        //imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
 
 
         iconImageView.setOnClickListener(new View.OnClickListener() {
