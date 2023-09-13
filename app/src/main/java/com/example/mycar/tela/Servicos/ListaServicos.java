@@ -1,6 +1,7 @@
 package com.example.mycar.tela.Servicos;
 
 import static com.example.mycar.classes.Variaveis.database;
+import static com.example.mycar.classes.Variaveis.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +23,6 @@ import java.util.ArrayList;
 
 public class ListaServicos extends AppCompatActivity {
 
-    public static ArrayList<Servicos> services;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +30,7 @@ public class ListaServicos extends AppCompatActivity {
         setContentView(R.layout.activity_lista_servicos);
         setTitle("Lista de Serviços");
 
-        database =  FirebaseDatabase.getInstance();
-
-        DatabaseReference myRef = database.getReference("servicos");
-        services = new ArrayList<>();
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
-                    Servicos value = servicoSnapshot.getValue(Servicos.class);
-                    if (value != null) {
-                        services.add(new Servicos(value.getIcon(), value.getNome(),value.getWhatsapp(),value.getX(), value.getY()));
-                    }
-                }
-                atualizaAdapter();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("TESTE", "Failed to read value.", error.toException());
-            }
-        });
+        atualizaAdapter();
     }
 
     public void atualizaAdapter(){

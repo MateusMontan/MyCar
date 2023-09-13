@@ -25,11 +25,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
-        android:text="Nome do serviço"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:text="CAPITÃO CAVERNA"
+        android:textColor="@color/white1"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageLogo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -173,14 +173,14 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/white1"
         android:maxWidth="8dp"
         android:maxHeight="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/caverninha"
-        android:background="@color/white1"/>
+        app:srcCompat="@drawable/caverninha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

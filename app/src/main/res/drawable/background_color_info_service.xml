@@ -9,7 +9,7 @@
     </item>
 
     <!-- O segundo item será o restante do plano de fundo -->
-    <item android:top="50dp">
+    <item android:top="100dp">
         <shape android:shape="rectangle">
             <solid android:color="@color/white1" />
         </shape>
