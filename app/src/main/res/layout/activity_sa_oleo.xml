@@ -26,9 +26,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="Data"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="Trocado Km"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,9 +50,9 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
+        android:text="Oléo"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,9 +62,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="Próximo Km"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +74,9 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="TextView"
+        android:text="Local"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
         android:id="@+id/Edit1"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
@@ -128,7 +128,7 @@
         android:id="@+id/Edit4"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
@@ -142,7 +142,7 @@
         android:id="@+id/Edit5"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
@@ -157,50 +157,50 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintStart_toEndOf="@+id/Edit1"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/Edit1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt2"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintStart_toEndOf="@+id/Edit2"
-        app:layout_constraintTop_toBottomOf="@+id/Bt1" />
+        app:layout_constraintTop_toTopOf="@+id/Edit2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt3"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintStart_toEndOf="@+id/Edit3"
-        app:layout_constraintTop_toBottomOf="@+id/Bt2" />
+        app:layout_constraintTop_toTopOf="@+id/Edit3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt4"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintStart_toEndOf="@+id/Edit4"
-        app:layout_constraintTop_toBottomOf="@+id/Bt3" />
+        app:layout_constraintTop_toTopOf="@+id/Edit4" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt5"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintStart_toEndOf="@+id/Edit5"
-        app:layout_constraintTop_toBottomOf="@+id/Bt4" />
+        app:layout_constraintTop_toTopOf="@+id/Edit5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
