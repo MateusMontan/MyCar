@@ -98,7 +98,6 @@
 
     <EditText
         android:id="@+id/Edit2"
-        android:inputType="date"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -106,6 +105,7 @@
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
+        android:inputType="date"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"

@@ -31,7 +31,7 @@ public class MenuPrincipal extends AppCompatActivity {
         setTitle("Menu Principal");
 
         Button ButtonServicos = findViewById(R.id.buttonServicos);
-        Button buttonUsuario = findViewById(R.id.buttonUsuario);
+        Button buttonUsuario = findViewById(R.id.buttonPerfil);
 
         ButtonServicos.setOnClickListener(new View.OnClickListener() {
             @Override

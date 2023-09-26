@@ -31,7 +31,7 @@ public class ListaAutomoveis extends AppCompatActivity {
 
         database =  FirebaseDatabase.getInstance();
 
-        DatabaseReference myRef = database.getReference("usuarios/user-1690505825528/automoveis");
+        DatabaseReference myRef = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis");
         automovel = new ArrayList<>();
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

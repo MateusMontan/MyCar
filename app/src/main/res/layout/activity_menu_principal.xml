@@ -7,7 +7,7 @@
     tools:context=".MenuPrincipal"
     android:background="#F2F2F2">
     <Button
-        android:id="@+id/buttonUsuario"
+        android:id="@+id/buttonPerfil"
         android:layout_width="330dp"
         android:layout_height="90dp"
         android:layout_marginTop="8dp"

@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.example.mycar.R;
 import com.example.mycar.tela.Servicos.Info_Servicos;
+import com.example.mycar.tela.Usuario.AutomoveisServicos.SA_Oleo;
 import com.example.mycar.tela.Usuario.Info_Automoveis;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
         btnService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Info_Automoveis.class);
+                Intent intent = new Intent(v.getContext(), SA_Oleo.class);
                 automovelescolhido = service.clone();
                 v.getContext().startActivity(intent);
             }

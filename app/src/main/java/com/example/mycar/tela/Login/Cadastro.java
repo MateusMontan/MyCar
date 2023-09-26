@@ -44,7 +44,7 @@ public class Cadastro extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editSenha);
 
-        Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
+        //Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
 
         Button botaoLogin = findViewById(R.id.buttonLogin);
         botaoLogin.setOnClickListener(new View.OnClickListener() {
@@ -55,16 +55,16 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        botaoEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(validarCampos()){
-                    criarUsuario();
-                }
-
-            }
-        });
+//        botaoEnviar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                if(validarCampos()){
+//                    criarUsuario();
+//                }
+//
+//            }
+//        });
 
     }
 
