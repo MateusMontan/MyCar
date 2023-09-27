@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.example.mycar.tela.Login.Cadastro;
 import com.example.mycar.tela.Login.Carregamento;
@@ -23,6 +24,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         Handler handle = new Handler();
+
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+
         handle.postDelayed(new Runnable() {
             @Override public void run() {
                 mostrarLogin();
