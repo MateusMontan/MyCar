@@ -34,6 +34,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, MenuPrincipal.class);
                 startActivity(intent);
+
+                finish();
             }
         });
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
