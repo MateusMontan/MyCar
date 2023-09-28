@@ -17,7 +17,7 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="16dp"
         android:text="Capitão Caverna"
-        android:textColor="@color/black"
+        android:textColor="@color/white1"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
