@@ -2,6 +2,9 @@ package com.example.mycar.tela.Servicos;
 
 import static com.example.mycar.classes.Variaveis.servicoescolhido;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mycar.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +30,10 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
     private TextView textView;
     private ImageView iconImageView;
     private ImageView imageView3;
+
+    private ImageView imageView5;
+
+    private ImageView imageView4;
     private ImageView imageLogo;
 
     private DatabaseReference mDatabase;
@@ -38,6 +46,8 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         textView = findViewById(R.id.textView);
         iconImageView = findViewById(R.id.iconImageView);
         imageView3 = findViewById(R.id.imageView3);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView4 = findViewById(R.id.imageView4);
         imageLogo = findViewById(R.id.imageLogo);
         setTitle(servicoescolhido.getNome());
 
@@ -73,6 +83,40 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+
+                String textoemail = servicoescolhido.getEmail();
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{textoemail});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto do E-mail");
+                intent.putExtra(Intent.EXTRA_TEXT, "Corpo do E-mail");
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Info_Servicos.this, "Nenhum aplicativo de e-mail disponível", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        imageView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String informacao = servicoescolhido.getEmail();
+
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("label", informacao);
+                clipboard.setPrimaryClip(clip);
+
+                Toast.makeText(getApplicationContext(), "Número de telefone copiado", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
