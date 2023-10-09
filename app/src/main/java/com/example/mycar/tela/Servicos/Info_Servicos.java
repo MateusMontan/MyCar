@@ -51,7 +51,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         imageLogo = findViewById(R.id.imageLogo);
         setTitle(servicoescolhido.getNome());
 
-        textView.setText(servicoescolhido.getWhatsapp());
+        textView.setText(servicoescolhido.getNome());
         //imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
 
 
@@ -107,7 +107,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         imageView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String informacao = servicoescolhido.getEmail();
+                String informacao = servicoescolhido.getWhatsapp();
 
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("label", informacao);
