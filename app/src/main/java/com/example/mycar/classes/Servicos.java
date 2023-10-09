@@ -2,6 +2,7 @@ package com.example.mycar.classes;
 
 public class Servicos implements Cloneable{
     private String nome;
+    private String email;
     private String whatsapp;
 
     private String x;
@@ -39,12 +40,13 @@ public class Servicos implements Cloneable{
     public Servicos(){
 
     }
-    public Servicos(String icon, String nome, String whatsapp, String x, String y) {
+    public Servicos(String icon, String nome, String whatsapp, String x, String y, String email) {
         this.nome = nome;
         this.whatsapp = whatsapp;
         this.x = x;
         this.y = y;
         this.icon = icon;
+        this.email = email;
     }
 
 
@@ -54,6 +56,14 @@ public class Servicos implements Cloneable{
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 

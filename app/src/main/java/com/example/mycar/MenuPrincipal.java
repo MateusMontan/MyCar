@@ -66,7 +66,7 @@ public class MenuPrincipal extends AppCompatActivity {
                 for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
                     Servicos value = servicoSnapshot.getValue(Servicos.class);
                     if (value != null) {
-                        services.add(new Servicos(value.getIcon(), value.getNome(),value.getWhatsapp(),value.getX(), value.getY()));
+                        services.add(new Servicos(value.getIcon(), value.getNome(),value.getWhatsapp(),value.getX(), value.getY(), value.getEmail()));
                     }
                 }
             }
