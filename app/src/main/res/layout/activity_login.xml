@@ -33,7 +33,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/image_upscar_logo" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -50,7 +50,7 @@
         android:id="@+id/buttonLogar"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue1"
         android:text="Acessar"
         android:textSize="16sp"
@@ -118,14 +118,14 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:id="@+id/image_upscar_logo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/png_temporario" />
+        app:srcCompat="@drawable/upscar_blue_logo" />
 
     <TextView
         android:id="@+id/textView8"
@@ -137,6 +137,6 @@
         android:textColor="@color/blue1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/image_upscar_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

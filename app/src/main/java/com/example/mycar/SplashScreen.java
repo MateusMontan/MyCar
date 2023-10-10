@@ -25,9 +25,6 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         Handler handle = new Handler();
 
-        ProgressBar progressBar = findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.VISIBLE);
-
         handle.postDelayed(new Runnable() {
             @Override public void run() {
                 mostrarLogin();

@@ -91,7 +91,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
                 intent.setData(Uri.parse("mailto:"));
 
                 String textoemail = servicoescolhido.getEmail();
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{textoemail});
+                intent.putExtra(Intent.EXTRA_EMAIL, textoemail);
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto do E-mail");
                 intent.putExtra(Intent.EXTRA_TEXT, "Corpo do E-mail");
 
