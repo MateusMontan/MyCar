@@ -93,7 +93,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/TextoEndereço"
+            android:id="@+id/Texto1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -124,7 +124,7 @@
             android:id="@+id/End1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TextoEndereço"
+            android:layout_below="@id/Texto1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="16dp"
@@ -133,7 +133,7 @@
             android:text="Rua Romualdo Joaquim de Souza nª 66, Apt. 202"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TextoEndereço" />
+            app:layout_constraintTop_toBottomOf="@+id/Texto1" />
 
         <TextView
             android:id="@+id/End3"
