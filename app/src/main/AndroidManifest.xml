@@ -17,6 +17,9 @@
         android:theme="@style/Base.Theme.MyCar"
         tools:targetApi="31">
         <activity
+            android:name=".tela.Usuario.EditarUsuaria"
+            android:exported="false" />
+        <activity
             android:name=".tela.Usuario.AutomoveisServicos.SA_Oleo"
             android:exported="false" />
 
@@ -45,8 +48,7 @@
             android:exported="false" />
         <activity
             android:name=".tela.Login.Login"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".tela.Login.Cadastro"
             android:exported="false" />
@@ -58,12 +60,12 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MenuPrincipal"

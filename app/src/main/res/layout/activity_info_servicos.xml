@@ -13,26 +13,27 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Capitão Caverna"
         android:textColor="@color/white1"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Linear1"
         android:layout_width="400dp"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:layout_margin="12dp"
         android:background="#FFFFFF"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="142dp">
+        tools:layout_editor_absoluteY="187dp">
 
         <TextView
             android:id="@+id/TextoHorario"
@@ -41,9 +42,10 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="4dp"
             android:layout_toEndOf="@+id/TimeIcon"
+            android:fontFamily="@font/poppins"
             android:text="Horário de Funcionamento"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/TimeIcon"
             app:layout_constraintTop_toTopOf="@+id/TimeIcon" />
@@ -69,10 +71,11 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:text="Segunda à Sexta \t\t\t\t\t\t08:00 h às 18:00 h\nSábado \t\t\t\t\t\t\t\t\t\t\t\t\t\t08:00 h às 12:00 h"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins"
+            android:text="Segunda à Sexta \t\t\t\t\t08:00 h às 18:00 h\nSábado \t\t\t\t\t\t\t\t\t\t\t\t\t\t08:00 h às 12:00 h"
             android:textAlignment="textStart"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TextoHorario" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -80,24 +83,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="400dp"
-        android:layout_height="350dp"
+        android:layout_height="330dp"
         android:layout_margin="12dp"
         android:layout_marginBottom="12dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/TextoEndereço"
+            android:id="@+id/Texto1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@+id/LocalIcon"
+            android:fontFamily="@font/poppins"
             android:text="Endereço"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/LocalIcon"
             app:layout_constraintTop_toTopOf="@+id/LocalIcon" />
@@ -119,15 +124,16 @@
             android:id="@+id/End1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TextoEndereço"
+            android:layout_below="@id/Texto1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
             android:text="Rua Romualdo Joaquim de Souza nª 66, Apt. 202"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TextoEndereço" />
+            app:layout_constraintTop_toBottomOf="@+id/Texto1" />
 
         <TextView
             android:id="@+id/End3"
@@ -136,23 +142,25 @@
             android:layout_below="@id/End1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
+            android:fontFamily="@font/poppins"
             android:text="Praça da Bandeira"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/End1"
             app:layout_constraintTop_toBottomOf="@+id/End1" />
 
-        <!--        <fragment-->
-        <!--            android:id="@+id/map"-->
-        <!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="200dp"-->
-        <!--            android:layout_below="@id/End3"-->
-        <!--            android:layout_alignParentStart="true"-->
-        <!--            android:layout_alignParentEnd="true"-->
-        <!--            android:layout_marginBottom="8dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="210dp"
+            android:layout_below="@id/End3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -215,6 +223,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
         android:background="@drawable/icon_circle"
         android:maxWidth="8dp"
         android:maxHeight="8dp"
