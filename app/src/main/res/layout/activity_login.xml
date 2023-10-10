@@ -7,7 +7,7 @@
     tools:context=".tela.Login.Login">
 
     <TextView
-        android:id="@+id/textEmailLogin"
+        android:id="@+id/textLocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

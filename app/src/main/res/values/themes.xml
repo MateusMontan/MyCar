@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.MyCar" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/blue1</item>
+        <item name="colorPrimary">#000000</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
     </style>

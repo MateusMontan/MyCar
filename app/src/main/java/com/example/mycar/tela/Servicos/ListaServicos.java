@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.ServiceState;
 import android.util.Log;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.mycar.R;
@@ -35,7 +36,7 @@ public class ListaServicos extends AppCompatActivity {
 
     public void atualizaAdapter(){
         AdapterServicos adapter = new AdapterServicos(this, services);
-        ListView listViewServices = findViewById(R.id.listViewServices);
+        GridView listViewServices = findViewById(R.id.gridview);
         listViewServices.setAdapter(adapter);
     }
 }
