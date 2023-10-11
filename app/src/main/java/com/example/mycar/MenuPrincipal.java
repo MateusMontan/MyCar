@@ -5,17 +5,15 @@ import static com.example.mycar.classes.Variaveis.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.example.mycar.classes.Servicos;
-import com.example.mycar.tela.Login.Cadastro;
 import com.example.mycar.tela.Servicos.ListaServicos;
+import com.example.mycar.tela.Usuario.EditarUsuario;
 import com.example.mycar.tela.Usuario.ListaAutomoveis;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,6 +33,16 @@ public class MenuPrincipal extends AppCompatActivity {
 
         View ViewAutomoveis = findViewById(R.id.automoveis);
         View ViewServicos = findViewById(R.id.servicos);
+        ImageView imagePerfil = findViewById(R.id.perfil);
+
+        imagePerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), EditarUsuario.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
 
         ViewServicos.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color_info_editar"
-    tools:context=".tela.Usuario.EditarUsuaria">
+    tools:context=".tela.Usuario.EditarUsuario">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.mycar.R;
 
-public class EditarUsuaria extends AppCompatActivity {
+public class EditarUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
