@@ -9,6 +9,15 @@
     tools:context=".MenuPrincipal">
 
     <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/pin_map"
+        app:layout_constraintStart_toEndOf="@+id/textLocal2"
+        app:layout_constraintTop_toTopOf="@+id/textLocal2" />
+
+    <ImageView
         android:id="@+id/perfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -17,16 +26,6 @@
         android:src="@drawable/profile_male"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/rectangle_local"
-        android:layout_width="340dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLocal2" />
 
     <TextView
         android:id="@+id/textLocal2"
@@ -39,6 +38,16 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_local"
+        android:layout_width="340dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLocal2" />
 
     <TextView
         android:id="@+id/leopoldina"
@@ -54,15 +63,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_local"
         app:layout_constraintStart_toStartOf="@+id/rectangle_local" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/pin_map"
-        app:layout_constraintStart_toEndOf="@+id/textLocal2"
-        app:layout_constraintTop_toTopOf="@+id/textLocal2" />
 
     <View
         android:id="@+id/automoveis"
@@ -82,8 +82,8 @@
         android:layout_height="211dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/servico_fundo"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/fundo_servico"
         android:clickable="true"
         android:contentDescription="@string/descricao_servico"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_color_info_editar"
+    android:background="@color/grey"
     tools:context=".tela.Usuario.EditarUsuario">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        android:layout_margin="12dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="565dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
 
         <TextView
@@ -53,7 +51,6 @@
             android:id="@+id/EditEmail"
             android:layout_width="315dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="10dp"
             android:inputType="textEmailAddress"
             android:text="davimontan77@gmail.com"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,34 +130,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="136dp"
-        android:background="@drawable/icon_circle"
-        android:maxWidth="10dp"
-        android:maxHeight="10dp"
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/blue2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/poppins"
-        android:text="Salvar"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/ImageViewServico"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/profile_male"
+        android:maxWidth="10dp"
+        android:maxHeight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

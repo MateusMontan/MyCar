@@ -33,8 +33,8 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
 
     private ImageView imageView5;
 
-    private ImageView imageView4;
     private ImageView imageLogo;
+
 
     private DatabaseReference mDatabase;
 
@@ -43,13 +43,11 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_servicos);
 
-        textView = findViewById(R.id.textView);
-        iconImageView = findViewById(R.id.iconImageView);
-        imageView3 = findViewById(R.id.imageView3);
-        imageView5 = findViewById(R.id.imageView5);
-        imageView4 = findViewById(R.id.imageView4);
-        imageLogo = findViewById(R.id.imageLogo);
-        setTitle(servicoescolhido.getNome());
+        textView = findViewById(R.id.textNomeServico);
+        iconImageView = findViewById(R.id.ImageViewWhatsapp);
+        imageView3 = findViewById(R.id.ImageViewLigar);
+        imageView5 = findViewById(R.id.imageViewEmail);
+        //imageLogo = findViewById(R.id.ImageViewServico);
 
         textView.setText(servicoescolhido.getNome());
         //imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
@@ -84,24 +82,24 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        imageView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:"));
-
-                String textoemail = servicoescolhido.getEmail();
-                intent.putExtra(Intent.EXTRA_EMAIL, textoemail);
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto do E-mail");
-                intent.putExtra(Intent.EXTRA_TEXT, "Corpo do E-mail");
-
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(Info_Servicos.this, "Nenhum aplicativo de e-mail disponível", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        imageView4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Intent.ACTION_SENDTO);
+//                intent.setData(Uri.parse("mailto:"));
+//
+//                String textoemail = servicoescolhido.getEmail();
+//                intent.putExtra(Intent.EXTRA_EMAIL, textoemail);
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto do E-mail");
+//                intent.putExtra(Intent.EXTRA_TEXT, "Corpo do E-mail");
+//
+//                if (intent.resolveActivity(getPackageManager()) != null) {
+//                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(Info_Servicos.this, "Nenhum aplicativo de e-mail disponível", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
 
         imageView5.setOnClickListener(new View.OnClickListener() {

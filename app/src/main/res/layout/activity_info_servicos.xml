@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textNomeServico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -18,22 +18,21 @@
         android:textColor="@color/white1"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/ImageViewServico" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Linear1"
         android:layout_width="400dp"
         android:layout_height="120dp"
-        android:layout_margin="12dp"
+        android:layout_marginTop="32dp"
         android:background="#FFFFFF"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="187dp">
+        app:layout_constraintTop_toBottomOf="@+id/textNomeServico"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/TextoHorario"
@@ -84,13 +83,12 @@
         android:id="@+id/relativeLayout"
         android:layout_width="400dp"
         android:layout_height="330dp"
-        android:layout_margin="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="16dp"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Linear1">
 
         <TextView
             android:id="@+id/Texto1"
@@ -156,7 +154,7 @@
             android:layout_below="@id/End3"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -177,13 +175,13 @@
 
 
         <ImageView
-            android:id="@+id/iconImageView"
+            android:id="@+id/ImageViewWhatsapp"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:contentDescription="WhatsApp Icon"
             android:layout_marginRight="15dp"
+            android:contentDescription="WhatsApp Icon"
             android:src="@drawable/whatsapp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -191,25 +189,25 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/ImageViewLigar"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/iconImageView"
+            android:layout_toEndOf="@+id/ImageViewWhatsapp"
             android:contentDescription="Telefone Icon"
-            android:layout_marginRight="15dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iconImageView"
+            app:layout_constraintStart_toEndOf="@+id/ImageViewWhatsapp"
             app:srcCompat="@drawable/chamada" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageViewEmail"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/imageView4"
+            android:layout_marginLeft="15dp"
             android:contentDescription="Email Icon"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -219,16 +217,12 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ImageView
-        android:id="@+id/imageLogo"
+        android:id="@+id/ImageViewServico"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/icon_circle"
-        android:maxWidth="8dp"
-        android:maxHeight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

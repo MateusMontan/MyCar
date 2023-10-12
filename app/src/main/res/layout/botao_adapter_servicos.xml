@@ -12,12 +12,11 @@
         android:id="@+id/Btn1"
         android:layout_width="181dp"
         android:layout_height="100dp"
+        android:backgroundTint="@color/blue1"
         android:text="Button"
         android:textColor="@color/white2"
-        android:backgroundTint="@color/blue2"
-        app:cornerRadius="15dp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="6dp"
-        />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mycar.MenuPrincipal;
 import com.example.mycar.R;
@@ -28,14 +31,30 @@ public class Login extends AppCompatActivity {
         Button botaoLogin = findViewById(R.id.buttonLogar);
         Button botaoCadastro = findViewById(R.id.botaoCadastro);
 
+        EditText editUser = findViewById(R.id.EditUser);
+        EditText editSenha = findViewById(R.id.editTextPassword);
+
+        editUser.setText("mateusinfocefetmg@gmail.com");
+        editSenha.setText("123456");
+
 
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, MenuPrincipal.class);
-                startActivity(intent);
+                Log.d("TESTE", "onClick: "+editUser.getText().toString()+editSenha.getText().toString());
+                if(editUser.getText().toString().equals("mateusinfocefetmg@gmail.com") ){
+                    if(editSenha.getText().toString().equals("123456")){
+                        Intent intent = new Intent(Login.this, MenuPrincipal.class);
+                        startActivity(intent);
 
-                finish();
+                        finish();
+                    }else{
+                        Toast.makeText(Login.this, "Senha incorreta!", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(Login.this, "Email do usuario não encontrado!", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         botaoCadastro.setOnClickListener(new View.OnClickListener() {

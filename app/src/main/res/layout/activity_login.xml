@@ -10,6 +10,7 @@
         android:id="@+id/textLocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
         android:text="Email"
         app:layout_constraintBottom_toTopOf="@+id/EditUser"
@@ -19,6 +20,7 @@
         android:id="@+id/textSenhaLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
         android:text="Senha"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
@@ -28,7 +30,7 @@
         android:id="@+id/EditUser"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="160dp"
         android:hint="Digite seu email."
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,7 +121,7 @@
 
     <ImageView
         android:id="@+id/image_upscar_logo"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
