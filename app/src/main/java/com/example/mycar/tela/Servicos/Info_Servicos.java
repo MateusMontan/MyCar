@@ -57,7 +57,7 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View view) {
                 String numerotelefone = servicoescolhido.getWhatsapp();
-                String mensagem = "Fala cmg bb !";
+                String mensagem = "Olá!";
                 String mensagemcodificada = Uri.encode(mensagem);
                 String url = "https://wa.me/+" + numerotelefone + "?text=" + mensagemcodificada;
 
