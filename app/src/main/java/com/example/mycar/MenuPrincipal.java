@@ -69,7 +69,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         database =  FirebaseDatabase.getInstance();
 
-        DatabaseReference UserRef = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/dados");
+        DatabaseReference UserRef = database.getReference("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados");
 
         UserRef.addValueEventListener(new ValueEventListener() {
             @Override
