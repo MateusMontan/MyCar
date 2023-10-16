@@ -26,8 +26,14 @@ public class EditarUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_editar_usuario);
 
         EditText EditUser = findViewById(R.id.EditUser);
+        EditText EditEmail = findViewById(R.id.EditEmail);
+        EditText EditSenha = findViewById(R.id.EditSenha);
+        EditText EditTelefone = findViewById(R.id.EditTelefone);
 
         EditUser.setText(usuarioEscolhido.nome);
+        EditEmail.setText(usuarioEscolhido.email);
+        EditSenha.setText(usuarioEscolhido.senha);
+        EditTelefone.setText(usuarioEscolhido.telefone);
 
 //        textView = findViewById(R.id.EditUser);
 //
