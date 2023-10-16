@@ -1,6 +1,6 @@
 package com.example.mycar.classes;
 
-public class Usuario {
+public class Usuario implements Cloneable{
     public String nome;
     public String email;
     public String senha;
@@ -38,5 +38,13 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    public Usuario clone() {
+        try {
+            return (Usuario) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Tratar a exceção, se necessário
+            return null;
+        }
     }
 }

@@ -2,7 +2,7 @@ package com.example.mycar;
 
 import static com.example.mycar.classes.Variaveis.database;
 import static com.example.mycar.classes.Variaveis.services;
-import static com.example.mycar.classes.Variaveis.usuarioescolhido;
+import static com.example.mycar.classes.Variaveis.usuarioEscolhido;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,6 +78,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     Usuario usuario = snapshot.getValue(Usuario.class);
 
                     if(usuario != null){
+                        usuarioEscolhido = usuario.clone();
                     }
                 }
 
