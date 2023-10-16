@@ -5,8 +5,11 @@ import static com.example.mycar.classes.Variaveis.usuarioEscolhido;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mycar.R;
 import com.google.firebase.database.DatabaseError;
@@ -16,9 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+import button.OnClickListener;
+
 public class EditarUsuario extends AppCompatActivity {
 
     private TextView textView;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,31 +41,34 @@ public class EditarUsuario extends AppCompatActivity {
         EditSenha.setText(usuarioEscolhido.senha);
         EditTelefone.setText(usuarioEscolhido.telefone);
 
-//        textView = findViewById(R.id.EditUser);
-//
-//        String novoEmail = "novoemail@gmail.com";
-//        String novoNome = "Novo Nome";
-//        String novaSenha = "novasenha123";
-//
-//        // Referência para o nó "usuarios/mateus/dados"
-//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("usuarios").child("mateus").child("dados");
-//
-//        // Atualize os valores desejados
-//        Map<String, Object> updates = new HashMap<>();
-//        updates.put("email", novoEmail);
-//        updates.put("nome", novoNome);
-//        updates.put("senha", novaSenha);
-//
-//        databaseReference.updateChildren(updates, new DatabaseReference.CompletionListener() {
-//            @Override
-//            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-//                if (databaseError == null) {
-//                    // Atualização bem-sucedida
-//                } else {
-//                    // Lidar com erros, se houver
-//                }
-//            }
-//        });
+        Button btnSalvar = findViewById(R.id.Salvar);
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obter os valores editados dos EditText
+                String novoNome = EditUser.getText().toString();
+                String novoEmail = EditEmail.getText().toString();
+                String novaSenha = EditSenha.getText().toString();
+                String novoTelefone = EditTelefone.getText().toString();
+
+                // Atualizar os valores no objeto usuarioEscolhido
+                usuarioEscolhido.setNome(novoNome);
+                usuarioEscolhido.setEmail(novoEmail);
+                usuarioEscolhido.setSenha(novaSenha);
+                usuarioEscolhido.setTelefone(novoTelefone);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+
+                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("nome").setValue(novoNome);
+                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("email").setValue(novoEmail);
+                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("senha").setValue(novaSenha);
+                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("telefone").setValue(novoTelefone);
+                
+                Toast.makeText(EditarUsuario.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
 }
