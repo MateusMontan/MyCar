@@ -5,15 +5,18 @@ public class Usuario implements Cloneable{
     public String email;
     public String senha;
 
+    public String telefone;
+
     // Construtor vazio necessário para o Firebase
     public Usuario() {
     }
 
     // Construtor com os campos
-    public Usuario(String nome, String email, String senha) {
+    public Usuario(String nome, String email, String senha, String telefone) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.telefone = telefone;
     }
 
     public String getNome() {
@@ -38,6 +41,14 @@ public class Usuario implements Cloneable{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
     public Usuario clone() {
         try {
