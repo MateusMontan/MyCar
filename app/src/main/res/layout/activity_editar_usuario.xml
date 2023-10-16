@@ -41,7 +41,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="10dp"
             android:inputType="textPersonName"
-            android:text="Capitão Caverna"
+            android:text="Nome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.247"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:layout_width="315dp"
             android:layout_height="48dp"
             android:inputType="textEmailAddress"
-            android:text="davimontan77@gmail.com"
+            android:text="email@email.com"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.247"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="10dp"
             android:inputType="textPassword"
-            android:text="********"
+            android:text="senha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.247"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="10dp"
             android:inputType="textPhonetic"
-            android:text="(32) 99991-6411"
+            android:text="(00) 00000-0000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.247"
             app:layout_constraintStart_toStartOf="parent"
@@ -151,6 +151,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/Salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        tools:layout_editor_absoluteX="314dp"
+        tools:layout_editor_absoluteY="11dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

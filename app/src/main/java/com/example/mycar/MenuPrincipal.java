@@ -2,7 +2,9 @@ package com.example.mycar;
 
 import static com.example.mycar.classes.Variaveis.database;
 import static com.example.mycar.classes.Variaveis.services;
+import static com.example.mycar.classes.Variaveis.usuarioescolhido;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.mycar.classes.Servicos;
+import com.example.mycar.classes.Usuario;
 import com.example.mycar.tela.Servicos.ListaServicos;
 import com.example.mycar.tela.Usuario.EditarUsuario;
 import com.example.mycar.tela.Usuario.ListaAutomoveis;
@@ -65,6 +68,26 @@ public class MenuPrincipal extends AppCompatActivity {
         });
 
         database =  FirebaseDatabase.getInstance();
+
+        DatabaseReference UserRef = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/dados");
+
+        UserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    Usuario usuario = snapshot.getValue(Usuario.class);
+
+                    if(usuario != null){
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         DatabaseReference myRef = database.getReference("servicos");
         services = new ArrayList<>();
