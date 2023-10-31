@@ -59,6 +59,18 @@
         app:layout_constraintTop_toBottomOf="@+id/Edit4" />
 
     <TextView
+        android:id="@+id/TextView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Garantia"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="646dp" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -147,11 +159,23 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
-        android:hint="..."
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/EditUpload"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/custom_edit_text"
+        android:drawablePadding="12dp"
+        android:hint="Archive.PDF"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView9" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt1"
@@ -159,7 +183,9 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
+        android:hint="Editar Local"
         android:background="@drawable/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit0"
         app:layout_constraintTop_toTopOf="@+id/Edit0" />
 
@@ -169,7 +195,9 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
+        android:hint="Editar Data"
         android:background="@drawable/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit2"
         app:layout_constraintTop_toTopOf="@+id/Edit2" />
 
@@ -179,7 +207,9 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
+        android:hint="Editar Trocado"
         android:background="@drawable/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit3"
         app:layout_constraintTop_toTopOf="@+id/Edit3" />
 
@@ -190,6 +220,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
+        android:hint="Editar Km"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit4"
         app:layout_constraintTop_toTopOf="@+id/Edit4" />
 
@@ -199,9 +231,24 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
+        android:hint="Editar Oleo"
         android:background="@drawable/button_edit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit5"
         app:layout_constraintTop_toTopOf="@+id/Edit5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BTUpload"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:hint="Upload"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/button_upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toEndOf="@+id/EditUpload"
+        app:layout_constraintTop_toBottomOf="@+id/Bt5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
