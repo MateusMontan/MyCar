@@ -1,15 +1,19 @@
 package com.example.mycar.tela.Usuario.AutomoveisServicos;
 
-import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.mycar.R;
 
@@ -20,6 +24,7 @@ import java.io.InputStream;
 
 public class SA_Oleo extends AppCompatActivity {
     private static final int PICK_FILE_REQUEST_CODE = 123;
+    private static final int REQUEST_PERMISSION_CODE = 456;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +35,40 @@ public class SA_Oleo extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*"); // Alteração aqui para limitar a seleção a imagens
-                startActivityForResult(intent, PICK_FILE_REQUEST_CODE);
+                if (checkPermission()) {
+                    openFilePicker();
+                } else {
+                    requestPermission();
+                }
             }
         });
+    }
+
+    private boolean checkPermission() {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_CODE);
+    }
+
+    private void openFilePicker() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_FILE_REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openFilePicker();
+            } else {
+                Toast.makeText(this, "Permissão negada. Não é possível acessar a galeria.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
@@ -49,7 +83,7 @@ public class SA_Oleo extends AppCompatActivity {
                 InputStream inputStream = getContentResolver().openInputStream(selectedFileUri);
 
                 // Cria um arquivo no diretório de armazenamento interno do aplicativo com extensão de imagem
-                File internalFile = new File(getFilesDir(), "seuarquivo.png"); // Pode ser .jpg, .png, etc.
+                File internalFile = new File(getFilesDir(), "arquivoFoto.png"); // Pode ser .jpg, .png, etc.
 
                 // Cria um FileOutputStream para o arquivo interno
                 FileOutputStream outputStream = new FileOutputStream(internalFile);
