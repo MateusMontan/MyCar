@@ -7,7 +7,6 @@
     android:background="@drawable/background_color"
     tools:context=".tela.Usuario.AutomoveisServicos.SA_Oleo">
 
-
     <TextView
         android:id="@+id/textNomeServico"
         android:layout_width="wrap_content"
@@ -165,19 +164,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
-        android:id="@+id/EditUpload"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/custom_edit_text"
-        android:drawablePadding="12dp"
-        android:hint="Archive.PDF"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView9" />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt1"
         android:layout_width="30dp"
@@ -242,14 +228,22 @@
         android:id="@+id/BTUpload"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:hint="Upload"
-        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_upload"
+        android:hint="Upload"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@+id/EditUpload"
-        app:layout_constraintTop_toBottomOf="@+id/Bt5" />
+        app:layout_constraintTop_toBottomOf="@+id/Bt5"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <Button
+        android:id="@+id/ButtonDocument"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="682dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
