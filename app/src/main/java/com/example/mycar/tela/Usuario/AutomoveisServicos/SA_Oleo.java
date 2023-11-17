@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -104,6 +105,15 @@ public class SA_Oleo extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(this, "Erro ao salvar a foto", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+    private void exibirFoto() {
+        File internalFile = null;
+        if (internalFile != null && internalFile.exists()) {
+            ImageView imageView = findViewById(R.id.imageView3);
+            imageView.setImageURI(Uri.fromFile(internalFile));
+        } else {
+            Toast.makeText(this, "A foto não está disponível.", Toast.LENGTH_SHORT).show();
         }
     }
 }
