@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,12 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.mycar.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class SA_Oleo extends AppCompatActivity {
     private static final int PICK_FILE_REQUEST_CODE = 123;
@@ -86,14 +86,19 @@ public class SA_Oleo extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(selectedFileUri);
 
-                File directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                if (!directory.exists()) {
-                    directory.mkdirs();
+                // Especifique o diretório desejado
+                File customDirectory = new File(getExternalFilesDir(null), "MyCARPhoto");
+
+                if (!customDirectory.exists()) {
+                    customDirectory.mkdirs();
                 }
 
-                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                String imageFileName = "JPEG_" + timeStamp + "_";
-                internalFile = new File(directory, imageFileName + ".jpg");
+                // Nome do arquivo com carimbo de data e hora
+                String timeStamp = String.valueOf(System.currentTimeMillis());
+                String imageFileName = "JPEG_" + timeStamp + ".jpg";
+
+                // Cria o arquivo no diretório personalizado
+                internalFile = new File(customDirectory, imageFileName);
 
                 FileOutputStream outputStream = new FileOutputStream(internalFile);
 
@@ -106,7 +111,7 @@ public class SA_Oleo extends AppCompatActivity {
                 inputStream.close();
                 outputStream.close();
 
-                Toast.makeText(this, "Foto salva no armazenamento externo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Foto salva no diretório personalizado", Toast.LENGTH_SHORT).show();
                 exibirFoto();
             } catch (IOException e) {
                 e.printStackTrace();
