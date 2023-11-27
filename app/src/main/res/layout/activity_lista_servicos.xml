@@ -11,8 +11,8 @@
         android:id="@+id/perfil3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:src="@drawable/profile_male"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,12 +21,11 @@
         android:id="@+id/textLocal4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
         android:text="@string/local"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_local3"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -41,17 +40,18 @@
 
     <View
         android:id="@+id/rectangle_local3"
-        android:layout_width="340dp"
+        android:layout_width="300dp"
         android:layout_height="39dp"
         android:layout_marginTop="8dp"
         android:background="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/perfil3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLocal4" />
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="540dp"
         android:columnCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,4 +63,13 @@
             android:layout_height="match_parent"
             android:numColumns="2" />
     </GridLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
