@@ -76,7 +76,8 @@
             android:id="@+id/view1"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/viwegasolina"/>
         <View
             android:id="@+id/view2"
             android:layout_width="50dp"
