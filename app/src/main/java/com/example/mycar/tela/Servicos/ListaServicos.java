@@ -10,6 +10,7 @@ import android.telephony.ServiceState;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.mycar.R;
@@ -26,40 +27,49 @@ import java.util.ArrayList;
 
 public class ListaServicos extends AppCompatActivity {
 
-
+    protected boolean filtroAtivado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_servicos);
         setTitle("Lista de Serviços");
-
-        View view;
-
-        atualizaAdapter("");
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                atualizaAdapter("");
-            }
-        });
+        filtroAtivado = false;
+        atualizaAdapter(services);
     }
 
-    public ArrayList<Servicos> filtrarServicos(ArrayList<Servicos> services, String filtro){
-        ArrayList<Servicos> tempServicos = new ArrayList<Servicos>();
+    public void filtrar(String tipo){
+        String temp = "";
+        if(filtroAtivado == false) {
+            filtroAtivado = true;
+            temp = tipo;
+        }else {
+            filtroAtivado = false;
+        }
+        filtrarServicos(temp);
+    }
 
+    public void filtrarServicos(String tipo){
+        ArrayList<Servicos> servicosFiltrados = new ArrayList<Servicos>();
+
+        boolean hasType = false;
         for (Servicos servico: services ) {
-            if(servico.)
+            if (servico.getTipo().toString() == tipo) {
+                hasType = true;
+                break;
+            }
+            if (hasType) { servicosFiltrados.add(servico);
+            }
         }
 
-        return;
+        atualizaAdapter(servicosFiltrados);
     }
 
-    public void atualizaAdapter(String filtro){
-        ArrayList<Servicos> servicosFiltrados = filtrarServicos(services, filtro);
-        AdapterServicos adapter = new AdapterServicos(this, services);
+    public void atualizaAdapter(ArrayList<Servicos> servicosFiltrados){
+        AdapterServicos adapter = new AdapterServicos(this, servicosFiltrados);
         GridView listViewServices = findViewById(R.id.gridview);
         listViewServices.setAdapter(adapter);
     }
+
+
 }
