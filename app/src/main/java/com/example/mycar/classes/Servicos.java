@@ -51,13 +51,14 @@ public class Servicos implements Cloneable{
     public Servicos(){
 
     }
-    public Servicos(String icon, String nome, String whatsapp, String x, String y, String email) {
+    public Servicos(String icon, String nome, String whatsapp, String x, String y, String email, String tipo) {
         this.nome = nome;
         this.whatsapp = whatsapp;
         this.x = x;
         this.y = y;
         this.icon = icon;
         this.email = email;
+        this.tipo = tipo;
     }
 
 
@@ -77,6 +78,10 @@ public class Servicos implements Cloneable{
         this.email = email;
     }
 
+    public String getTipo() {return tipo; }
+
+    public void setTipo(String tipo){this.tipo = tipo;}
+
 
     public String getWhatsapp() {
         return whatsapp;
@@ -94,4 +99,6 @@ public class Servicos implements Cloneable{
             return null;
         }
     }
+
+
 }
