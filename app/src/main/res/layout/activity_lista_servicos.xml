@@ -72,42 +72,164 @@
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent">
 
-        <View
-            android:id="@+id/view1"
-            android:layout_width="50dp"
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/viwegasolina"/>
-        <View
-            android:id="@+id/view2"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view3"
-            android:layout_width="50dp"
+            <View
+                android:id="@+id/view1"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/postodegas1">
+            </View>
+
+            <TextView
+                android:id="@+id/TextPostoGas"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Posto de gasolina"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <View
-            android:id="@+id/view4"
-            android:layout_width="50dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:background="@drawable/autoele1">
+            </View>
+
+            <TextView
+                android:id="@+id/TextAutoEle"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Auto Elétrica"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <View
-            android:id="@+id/view5"
-            android:layout_width="50dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/mecanico3">
+            </View>
+
+            <TextView
+                android:id="@+id/TextMec"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Mecânico"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <View
-            android:id="@+id/view6"
-            android:layout_width="50dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borracharia3">
+            </View>
+
+            <TextView
+                android:id="@+id/TextBorracharia"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Borracharia"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <View
-            android:id="@+id/view7"
-            android:layout_width="50dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/concessionaria3">
+            </View>
+
+            <TextView
+                android:id="@+id/TextConcessionaria"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Concessionária"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/guincho2">
+            </View>
+
+            <TextView
+                android:id="@+id/TextGuincho"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Auto Socorro"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/funilaria1">
+            </View>
+
+            <TextView
+                android:id="@+id/TextLanternagem"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Lanternagem"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
