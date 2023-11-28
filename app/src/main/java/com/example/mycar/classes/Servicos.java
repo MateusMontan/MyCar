@@ -1,19 +1,30 @@
 package com.example.mycar.classes;
 
 public class Servicos implements Cloneable{
+
+    private String tipo;
+    /*
+    Tipo de Servico
+
+    0 - Posto de Gasolina
+    1 - Autoeletrica
+    2 - Mecanico
+    3 - Borracharia
+    4 - Concessionaria
+    5 - Guincho
+    6 - Lanternagem
+     */
+
     private String nome;
     private String email;
     private String whatsapp;
-
     private String x;
     private String y;
-
     private String icon;
 
     public void setX(String x) {
         this.x = x;
     }
-
 
     public String getX() {
         return x;
