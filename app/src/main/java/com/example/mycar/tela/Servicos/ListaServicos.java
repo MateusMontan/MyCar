@@ -37,11 +37,51 @@ public class ListaServicos extends AppCompatActivity {
         filtroAtivado = false;
         atualizaAdapter(services);
 
-        LinearLayout linearLayout = findViewById(R.id.posto);
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        LinearLayout postodegasolina = findViewById(R.id.postodegasolina);
+        postodegasolina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("0");
+            }
+        });
+
+        LinearLayout autoeletrica = findViewById(R.id.postodegasolina);
+        postodegasolina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 filtrar("1");
+            }
+        });
+
+        LinearLayout mecanica = findViewById(R.id.mecanica);
+        mecanica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("2");
+            }
+        });
+
+        LinearLayout borracharia = findViewById(R.id.borracharia);
+        borracharia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("3");
+            }
+        });
+
+        LinearLayout autosocorro = findViewById(R.id.autosocorro);
+        autosocorro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("4");
+            }
+        });
+
+        LinearLayout lanternagem = findViewById(R.id.lanternagem);
+        lanternagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("5");
             }
         });
     }

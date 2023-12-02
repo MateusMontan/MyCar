@@ -170,7 +170,6 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:hint="Editar Local"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit0"
@@ -182,7 +181,6 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:hint="Editar Data"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit2"
@@ -194,7 +192,6 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:hint="Editar Trocado"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit3"
@@ -207,7 +204,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
-        android:hint="Editar Km"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit4"
         app:layout_constraintTop_toTopOf="@+id/Edit4" />
@@ -218,7 +214,6 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:hint="Editar Oleo"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Edit5"
@@ -228,35 +223,52 @@
         android:id="@+id/BTUpload"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_upload"
-        android:hint="Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bt5"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="@+id/editTextText" />
 
     <Button
         android:id="@+id/ButtonDocument"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:layout_marginBottom="160dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="74dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintHorizontal_bias="0.762"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/Edit5"
+        app:layout_constraintTop_toBottomOf="@+id/TextView9"
+        app:srcCompat="@drawable/ion_attachclipe" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:background="#DCDCDC"
+
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ public class Servicos implements Cloneable{
 
     0 - Posto de Gasolina
     1 - Autoeletrica
-    2 - Mecanico
+    2 - Mecanica
     3 - Borracharia
     4 - Concessionaria
     5 - Guincho
