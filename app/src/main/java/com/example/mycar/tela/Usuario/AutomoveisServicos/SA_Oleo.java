@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,15 +40,16 @@ public class SA_Oleo extends AppCompatActivity {
     }
 
     private void setupUI() {
-        Button botao = findViewById(R.id.ButtonDocument);
-        botao.setOnClickListener(new View.OnClickListener() {
+        final ImageView imageView = findViewById(R.id.imageView5);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFilePicker();
+                // Aqui, você pode adicionar qualquer lógica adicional que deseja executar ao clicar na imagem.
             }
         });
     }
-
     private boolean checkPermission() {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
@@ -122,10 +124,12 @@ public class SA_Oleo extends AppCompatActivity {
 
     private void exibirFoto() {
         if (internalFile != null && internalFile.exists()) {
-            ImageView imageView = findViewById(R.id.imageView3);
-            imageView.setImageURI(Uri.fromFile(internalFile));
+            TextView textView = findViewById(R.id.editTextText);
+            String nomeDaImagem = internalFile.getName();
+            textView.setText(nomeDaImagem);
         } else {
             Toast.makeText(this, "A foto não está disponível.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

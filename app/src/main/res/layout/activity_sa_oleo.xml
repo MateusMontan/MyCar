@@ -220,38 +220,17 @@
         app:layout_constraintTop_toTopOf="@+id/Edit5" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/BTUpload"
+        android:id="@+id/BTUDownload"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_upload"
-        android:hint="Upload"
+        android:background="@drawable/baixararquivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
         app:layout_constraintTop_toBottomOf="@+id/Bt5"
         app:layout_constraintVertical_bias="0.379" />
-
-    <Button
-        android:id="@+id/ButtonDocument"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="74dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -267,7 +246,6 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:background="#DCDCDC"
-
         android:ems="10"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
