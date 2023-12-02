@@ -79,10 +79,11 @@
 
             <View
                 android:id="@+id/view1"
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/postodegas1">
+                android:background="@drawable/postodegas"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -91,6 +92,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Posto de gasolina"
+                android:textSize="12sp"
+                android:textColor="@color/bluetext"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -101,10 +105,11 @@
 
             <View
                 android:id="@+id/view2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/autoele1">
+                android:background="@drawable/testebateria"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -113,6 +118,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Auto Elétrica"
+                android:textSize="12sp"
+                android:textColor="@color/bluetext"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -123,10 +131,11 @@
 
             <View
                 android:id="@+id/view3"
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/mecanico3">
+                android:background="@drawable/mecanico"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -135,6 +144,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Mecânico"
+                android:textSize="12sp"
+                android:textColor="@color/bluetext"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -145,10 +157,11 @@
 
             <View
                 android:id="@+id/view4"
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/borracharia3">
+                android:background="@drawable/borracharia"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -157,28 +170,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Borracharia"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <View
-                android:id="@+id/view5"
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/concessionaria3">
-            </View>
-
-            <TextView
-                android:id="@+id/TextConcessionaria"
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Concessionária"
+                android:textColor="@color/bluetext"
+                android:textSize="12sp"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -189,10 +183,11 @@
 
             <View
                 android:id="@+id/view6"
-                android:layout_width="70dp"
+                android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/guincho2">
+                android:background="@drawable/guincho"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -201,6 +196,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Auto Socorro"
+                android:textColor="@color/bluetext"
+                android:textSize="12sp"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -211,10 +209,11 @@
 
             <View
                 android:id="@+id/view7"
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/funilaria1">
+                android:background="@drawable/lanternagem"
+                android:layout_gravity="center">
             </View>
 
             <TextView
@@ -223,6 +222,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Lanternagem"
+                android:textColor="@color/bluetext"
+                android:textSize="12sp"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
 
