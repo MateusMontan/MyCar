@@ -28,6 +28,7 @@ import java.util.ArrayList;
 public class ListaServicos extends AppCompatActivity {
 
     protected boolean filtroAtivado;
+    protected String tempTipoFiltro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,12 +89,13 @@ public class ListaServicos extends AppCompatActivity {
 
     public void filtrar(String tipo){
         String temp = "";
-        if(filtroAtivado == false) {
+        if(filtroAtivado == false || tempTipoFiltro != tipo) {
             filtroAtivado = true;
             temp = tipo;
         }else {
             filtroAtivado = false;
         }
+        Log.d("Teste 2","Temp: "+temp + "Filtro: "+filtroAtivado);
         filtrarServicos(temp);
     }
 
@@ -103,7 +105,7 @@ public class ListaServicos extends AppCompatActivity {
         boolean hasType = false;
         for (Servicos servico: services ) {
 
-            Log.d("Teste 1","Tipo: " + servico.getTipo().toString());
+            Log.d("Teste 2","Tipo: " + servico.getTipo().toString());
             if (servico.getTipo().toString() == tipo.toString()) {
                 hasType = true;
             }
