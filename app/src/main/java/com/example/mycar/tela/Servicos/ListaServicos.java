@@ -36,6 +36,14 @@ public class ListaServicos extends AppCompatActivity {
         setTitle("Lista de Serviços");
         filtroAtivado = false;
         atualizaAdapter(services);
+
+        LinearLayout linearLayout = findViewById(R.id.posto);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filtrar("1");
+            }
+        });
     }
 
     public void filtrar(String tipo){
@@ -54,11 +62,14 @@ public class ListaServicos extends AppCompatActivity {
 
         boolean hasType = false;
         for (Servicos servico: services ) {
-            if (servico.getTipo().toString() == tipo) {
+
+            Log.d("Teste 1","Tipo: " + servico.getTipo().toString());
+            if (servico.getTipo().toString() == tipo.toString()) {
                 hasType = true;
-                break;
             }
-            if (hasType) { servicosFiltrados.add(servico);
+            if (hasType == true) {
+                servicosFiltrados.add(servico);
+                hasType = false;
             }
         }
 
