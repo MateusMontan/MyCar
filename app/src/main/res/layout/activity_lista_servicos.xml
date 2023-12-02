@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/posto"
+            android:id="@+id/postodegasolina"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -100,6 +100,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/autoeletrica"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -126,6 +127,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/mecanica"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -152,6 +154,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/borracharia"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -178,6 +181,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/autosocorro"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -204,6 +208,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lanternagem"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -229,10 +234,16 @@
                 android:gravity="center"/>
         </LinearLayout>
 
-
-
-
-
-
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="375dp"
+        android:layout_height="105dp"
+        android:src="@drawable/propaganda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="104dp"
+        android:layout_gravity="center"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
