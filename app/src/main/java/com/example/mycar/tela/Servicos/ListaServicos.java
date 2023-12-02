@@ -46,8 +46,8 @@ public class ListaServicos extends AppCompatActivity {
             }
         });
 
-        LinearLayout autoeletrica = findViewById(R.id.postodegasolina);
-        postodegasolina.setOnClickListener(new View.OnClickListener() {
+        LinearLayout autoeletrica = findViewById(R.id.autoeletrica);
+        autoeletrica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 filtrar("1");
