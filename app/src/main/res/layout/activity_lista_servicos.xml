@@ -240,10 +240,11 @@
         android:id="@+id/imageView5"
         android:layout_width="375dp"
         android:layout_height="105dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
         android:src="@drawable/propaganda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="104dp"
-        android:layout_gravity="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_local3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
