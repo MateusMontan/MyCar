@@ -45,8 +45,7 @@ public class ListaServicos extends AppCompatActivity {
         postodegasolina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("0");
-                selecionar(postodegasolina);
+                filtrar("0",postodegasolina);
             }
         });
 
@@ -54,8 +53,7 @@ public class ListaServicos extends AppCompatActivity {
         autoeletrica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("1");
-                selecionar(autoeletrica);
+                filtrar("1",autoeletrica);
             }
         });
 
@@ -63,8 +61,7 @@ public class ListaServicos extends AppCompatActivity {
         mecanica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("2");
-                selecionar(mecanica);
+                filtrar("2",mecanica);
             }
         });
 
@@ -72,8 +69,7 @@ public class ListaServicos extends AppCompatActivity {
         borracharia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("3");
-                selecionar(borracharia);
+                filtrar("3",borracharia);
             }
         });
 
@@ -81,8 +77,7 @@ public class ListaServicos extends AppCompatActivity {
         autosocorro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("4");
-                selecionar(autosocorro);
+                filtrar("4",autosocorro);
 
             }
         });
@@ -91,15 +86,15 @@ public class ListaServicos extends AppCompatActivity {
         lanternagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("5");
-                selecionar(lanternagem);
+                filtrar("5",lanternagem);
             }
         });
     }
 
-    public void filtrar(String tipo){
+    public void filtrar(String tipo, LinearLayout selecionado){
         String temp = "";
         if(filtroAtivado == false || tempTipoFiltro != tipo) {
+            selecionar(selecionado);
             filtroAtivado = true;
             tempTipoFiltro = temp = tipo;
         }else {
