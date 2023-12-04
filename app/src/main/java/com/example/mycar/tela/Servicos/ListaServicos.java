@@ -91,7 +91,7 @@ public class ListaServicos extends AppCompatActivity {
         String temp = "";
         if(filtroAtivado == false || tempTipoFiltro != tipo) {
             filtroAtivado = true;
-            temp = tipo;
+            tempTipoFiltro = temp = tipo;
         }else {
             filtroAtivado = false;
         }
@@ -106,7 +106,7 @@ public class ListaServicos extends AppCompatActivity {
         for (Servicos servico: services ) {
 
             Log.d("Teste 2","Tipo: " + servico.getTipo().toString());
-            if (servico.getTipo().toString() == tipo.toString()) {
+            if (servico.getTipo().contains(tipo) ) {
                 hasType = true;
             }
             if (hasType == true) {
