@@ -5,6 +5,7 @@ import static com.example.mycar.classes.Variaveis.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.ServiceState;
 import android.util.Log;
@@ -38,11 +39,19 @@ public class ListaServicos extends AppCompatActivity {
         filtroAtivado = false;
         atualizaAdapter(services);
 
+
         LinearLayout postodegasolina = findViewById(R.id.postodegasolina);
         postodegasolina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 filtrar("0");
+                if(!v.isSelected()){
+                    v.setSelected(true);
+                    postodegasolina.setBackgroundColor(Color.GREEN);
+                }else{
+                    v.setSelected(false);
+                    postodegasolina.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -123,6 +132,9 @@ public class ListaServicos extends AppCompatActivity {
         GridView listViewServices = findViewById(R.id.gridview);
         listViewServices.setAdapter(adapter);
     }
+
+
+
 
 
 }
