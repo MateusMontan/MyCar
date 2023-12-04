@@ -47,7 +47,7 @@
         android:id="@+id/textLocal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/poppins"
         android:text="@string/local"
@@ -74,181 +74,193 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/scroll">
 
         <GridView
             android:id="@+id/gridview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="398dp"
             android:numColumns="2" />
     </GridLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="500dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="MissingConstraints">
+
 
         <LinearLayout
-            android:id="@+id/postodegasolina"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:id="@+id/linearLayout"
+            android:layout_width="500dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <View
-                android:id="@+id/view1"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/postodegas"></View>
+            <LinearLayout
+                android:id="@+id/postodegasolina"
+                android:layout_width="70dp"
+                android:layout_height="63dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TextPostoGas"
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/postodegas"></View>
+
+                <TextView
+                    android:id="@+id/TextPostoGas"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Posto de gasolina"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/autoeletrica"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Posto de gasolina"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/autoeletrica"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/testebateria"></View>
 
-            <View
-                android:id="@+id/view2"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/testebateria"></View>
+                <TextView
+                    android:id="@+id/TextAutoEle"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Auto Elétrica"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/TextAutoEle"
+            <LinearLayout
+                android:id="@+id/mecanica"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Auto Elétrica"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/mecanica"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/mecanico"></View>
 
-            <View
-                android:id="@+id/view3"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/mecanico"></View>
+                <TextView
+                    android:id="@+id/TextMec"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Mecânico"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/TextMec"
+            <LinearLayout
+                android:id="@+id/borracharia"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Mecânico"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/borracharia"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/borracharia"></View>
 
-            <View
-                android:id="@+id/view4"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/borracharia"></View>
+                <TextView
+                    android:id="@+id/TextBorracharia"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Borracharia"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/TextBorracharia"
+            <LinearLayout
+                android:id="@+id/autosocorro"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Borracharia"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/autosocorro"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/guincho"></View>
 
-            <View
-                android:id="@+id/view6"
-                android:layout_width="55dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/guincho"></View>
+                <TextView
+                    android:id="@+id/TextGuincho"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Auto Socorro"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/TextGuincho"
+            <LinearLayout
+                android:id="@+id/lanternagem"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Auto Socorro"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/lanternagem"></View>
+
+                <TextView
+                    android:id="@+id/TextLanternagem"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Lanternagem"
+                    android:textColor="@color/bluetext"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lanternagem"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <View
-                android:id="@+id/view7"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/lanternagem"></View>
-
-            <TextView
-                android:id="@+id/TextLanternagem"
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Lanternagem"
-                android:textColor="@color/bluetext"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imageView5"
