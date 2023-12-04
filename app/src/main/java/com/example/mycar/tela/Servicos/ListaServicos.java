@@ -103,6 +103,7 @@ public class ListaServicos extends AppCompatActivity {
             filtroAtivado = true;
             tempTipoFiltro = temp = tipo;
         }else {
+            limpar();
             filtroAtivado = false;
         }
         Log.d("Teste 2","Temp: "+temp + "Filtro: "+filtroAtivado);
@@ -134,13 +135,17 @@ public class ListaServicos extends AppCompatActivity {
         listViewServices.setAdapter(adapter);
     }
 
-    public void selecionar(LinearLayout selecionado){
+    public void limpar(){
         postodegasolina.setBackgroundColor(Color.WHITE);
         autoeletrica.setBackgroundColor(Color.WHITE);
         mecanica.setBackgroundColor(Color.WHITE);
         borracharia.setBackgroundColor(Color.WHITE);
         autosocorro.setBackgroundColor(Color.WHITE);
         lanternagem.setBackgroundColor(Color.WHITE);
+
+    }
+    public void selecionar(LinearLayout selecionado){
+        limpar();
         selecionado.setBackgroundColor(Color.BLUE);
     }
 }
