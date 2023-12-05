@@ -31,6 +31,8 @@ public class ListaServicos extends AppCompatActivity {
     protected boolean filtroAtivado;
     protected String tempTipoFiltro;
 
+    protected LinearLayout postodegasolina, autoeletrica, mecanica, borracharia, autosocorro,lanternagem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,69 +41,64 @@ public class ListaServicos extends AppCompatActivity {
         filtroAtivado = false;
         atualizaAdapter(services);
 
-
-        LinearLayout postodegasolina = findViewById(R.id.postodegasolina);
+        postodegasolina = findViewById(R.id.postodegasolina);
         postodegasolina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("0");
-                if(!v.isSelected()){
-                    v.setSelected(true);
-                    postodegasolina.setBackgroundColor(Color.GREEN);
-                }else{
-                    v.setSelected(false);
-                    postodegasolina.setBackgroundColor(Color.WHITE);
-                }
+                filtrar("0",postodegasolina);
             }
         });
 
-        LinearLayout autoeletrica = findViewById(R.id.autoeletrica);
+        autoeletrica = findViewById(R.id.autoeletrica);
         autoeletrica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("1");
+                filtrar("1",autoeletrica);
             }
         });
 
-        LinearLayout mecanica = findViewById(R.id.mecanica);
+        mecanica = findViewById(R.id.mecanica);
         mecanica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("2");
+                filtrar("2",mecanica);
             }
         });
 
-        LinearLayout borracharia = findViewById(R.id.borracharia);
+        borracharia = findViewById(R.id.borracharia);
         borracharia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("3");
+                filtrar("3",borracharia);
             }
         });
 
-        LinearLayout autosocorro = findViewById(R.id.autosocorro);
+        autosocorro = findViewById(R.id.autosocorro);
         autosocorro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("4");
+                filtrar("4",autosocorro);
+
             }
         });
 
-        LinearLayout lanternagem = findViewById(R.id.lanternagem);
+        lanternagem = findViewById(R.id.lanternagem);
         lanternagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filtrar("5");
+                filtrar("5",lanternagem);
             }
         });
     }
 
-    public void filtrar(String tipo){
+    public void filtrar(String tipo, LinearLayout selecionado){
         String temp = "";
         if(filtroAtivado == false || tempTipoFiltro != tipo) {
+            selecionar(selecionado);
             filtroAtivado = true;
             tempTipoFiltro = temp = tipo;
         }else {
+            limpar();
             filtroAtivado = false;
         }
         Log.d("Teste 2","Temp: "+temp + "Filtro: "+filtroAtivado);
@@ -133,8 +130,17 @@ public class ListaServicos extends AppCompatActivity {
         listViewServices.setAdapter(adapter);
     }
 
+    public void limpar(){
+        postodegasolina.setBackgroundColor(Color.WHITE);
+        autoeletrica.setBackgroundColor(Color.WHITE);
+        mecanica.setBackgroundColor(Color.WHITE);
+        borracharia.setBackgroundColor(Color.WHITE);
+        autosocorro.setBackgroundColor(Color.WHITE);
+        lanternagem.setBackgroundColor(Color.WHITE);
 
-
-
-
+    }
+    public void selecionar(LinearLayout selecionado){
+        limpar();
+        selecionado.setBackgroundColor(Color.BLUE);
+    }
 }
