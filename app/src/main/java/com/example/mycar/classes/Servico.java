@@ -1,6 +1,6 @@
 package com.example.mycar.classes;
 
-public class Servicos implements Cloneable{
+public class Servico implements Cloneable{
 
     private String tipo;
     /*
@@ -48,10 +48,10 @@ public class Servicos implements Cloneable{
         return icon;
     }
 
-    public Servicos(){
+    public Servico(){
 
     }
-    public Servicos(String icon, String nome, String whatsapp, String x, String y, String email, String tipo) {
+    public Servico(String icon, String nome, String whatsapp, String x, String y, String email, String tipo) {
         this.nome = nome;
         this.whatsapp = whatsapp;
         this.x = x;
@@ -91,9 +91,9 @@ public class Servicos implements Cloneable{
         this.whatsapp = whatsapp;
     }
 
-    public Servicos clone() {
+    public Servico clone() {
         try {
-            return (Servicos) super.clone();
+            return (Servico) super.clone();
         } catch (CloneNotSupportedException e) {
             // Tratar a exceção, se necessário
             return null;
