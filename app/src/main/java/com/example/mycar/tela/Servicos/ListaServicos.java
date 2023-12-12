@@ -4,8 +4,10 @@ import static com.example.mycar.classes.Variaveis.database;
 import static com.example.mycar.classes.Variaveis.services;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.telephony.ServiceState;
 import android.util.Log;
@@ -94,7 +96,7 @@ public class ListaServicos extends AppCompatActivity {
     public void filtrar(String tipo, LinearLayout selecionado){
         String temp = "";
         if(filtroAtivado == false || tempTipoFiltro != tipo) {
-            selecionar(selecionado);
+            selecionar(selecionado, 100);
             filtroAtivado = true;
             tempTipoFiltro = temp = tipo;
         }else {
@@ -139,8 +141,19 @@ public class ListaServicos extends AppCompatActivity {
         lanternagem.setBackgroundColor(Color.WHITE);
 
     }
-    public void selecionar(LinearLayout selecionado){
+    public void selecionar(LinearLayout selecionado, int alpha) {
         limpar();
-        selecionado.setBackgroundColor(Color.BLUE);
+        // Adicione bordas arredondadas ao layout
+        GradientDrawable shape = new GradientDrawable();
+        shape.setShape(GradientDrawable.RECTANGLE);
+        shape.setCornerRadii(new float[]{20, 20, 20, 20, 20, 20, 20, 20}); // Ajuste os valores conforme necessário
+        shape.setColor(ContextCompat.getColor(this, R.color.grey)); // Use o recurso de cor
+        shape.setStroke(0, Color.BLACK); // Largura e cor da borda
+
+        // Defina o fundo do layout
+        selecionado.setBackground(shape);
     }
+
+
+
 }

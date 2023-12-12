@@ -91,13 +91,13 @@
         android:layout_marginTop="20dp"
         android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        android:scrollbars="none">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="500dp"
             android:layout_height="70dp"
-            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -105,7 +105,6 @@
                 android:id="@+id/postodegasolina"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-
                 android:orientation="vertical">
 
                 <View
@@ -114,7 +113,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/postodegas"></View>
+                    android:background="@drawable/postodegasolina"
+                    android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
                     android:id="@+id/TextPostoGas"
@@ -140,7 +140,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/testebateria"></View>
+                    android:background="@drawable/testebateria"
+                    android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
                     android:id="@+id/TextAutoEle"
@@ -166,7 +167,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/mecanico"></View>
+                    android:background="@drawable/mecanico"
+                    android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
                     android:id="@+id/TextMec"
@@ -192,7 +194,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/borracharia"></View>
+                    android:background="@drawable/pneu"
+                    android:backgroundTint="#0F3EB6"></View>
 
                 <TextView
                     android:id="@+id/TextBorracharia"
@@ -218,7 +221,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/guincho"></View>
+                    android:background="@drawable/guincho"
+                    android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
                     android:id="@+id/TextGuincho"
@@ -244,7 +248,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/lanternagem"></View>
+                    android:background="@drawable/lanternagem"
+                    android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
                     android:id="@+id/TextLanternagem"
