@@ -115,7 +115,7 @@
 
     <Spinner
         android:id="@+id/spinnerCategoria"
-        android:layout_width="330dp"
+        android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
@@ -151,6 +151,21 @@
         android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textModelo" />
+
+    <Button
+        android:id="@+id/buttonInserir"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/blue1"
+        android:gravity="center"
+        android:text="Inserir"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

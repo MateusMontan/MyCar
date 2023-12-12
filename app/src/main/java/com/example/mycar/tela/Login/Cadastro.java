@@ -1,7 +1,5 @@
 package com.example.mycar.tela.Login;
 
-import static com.example.mycar.classes.Variaveis.database;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,14 +12,12 @@ import android.widget.Toast;
 
 import com.example.mycar.R;
 import com.example.mycar.classes.Autenticador;
-import com.example.mycar.classes.GeradorDeChave;
 import com.example.mycar.classes.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -46,7 +42,7 @@ public class Cadastro extends AppCompatActivity {
 
         //Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
 
-        Button botaoLogin = findViewById(R.id.buttonLogin);
+        Button botaoLogin = findViewById(R.id.buttonInserir);
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
