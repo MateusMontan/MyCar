@@ -31,7 +31,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edit0" />
+        app:layout_constraintTop_toBottomOf="@+id/EditPlaca" />
 
     <TextView
         android:id="@+id/textView4"
@@ -43,7 +43,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edit2" />
+        app:layout_constraintTop_toBottomOf="@+id/EditModelo" />
 
     <TextView
         android:id="@+id/textView5"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textNomeServico" />
 
     <EditText
-        android:id="@+id/Edit0"
+        android:id="@+id/EditPlaca"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/Edit2"
+        android:id="@+id/EditModelo"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -172,8 +172,8 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Edit0"
-        app:layout_constraintTop_toTopOf="@+id/Edit0" />
+        app:layout_constraintStart_toEndOf="@+id/EditPlaca"
+        app:layout_constraintTop_toTopOf="@+id/EditPlaca" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt2"
@@ -183,8 +183,8 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Edit2"
-        app:layout_constraintTop_toTopOf="@+id/Edit2" />
+        app:layout_constraintStart_toEndOf="@+id/EditModelo"
+        app:layout_constraintTop_toTopOf="@+id/EditModelo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Bt3"
