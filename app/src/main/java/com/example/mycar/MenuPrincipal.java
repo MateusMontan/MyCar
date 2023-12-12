@@ -1,9 +1,11 @@
 package com.example.mycar;
 
+import static com.example.mycar.classes.Variaveis.cidadeescolhida;
 import static com.example.mycar.classes.Variaveis.database;
-import static com.example.mycar.classes.Variaveis.services;
+import static com.example.mycar.classes.Variaveis.cidades;
 import static com.example.mycar.classes.Variaveis.usuarioEscolhido;
 
+import androidx.annotation.LongDef;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +13,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
-import com.example.mycar.classes.Servicos;
+import com.example.mycar.classes.Cidade;
+import com.example.mycar.classes.Servico;
 import com.example.mycar.classes.Usuario;
 import com.example.mycar.tela.Servicos.ListaServicos;
 import com.example.mycar.tela.Usuario.EditarUsuario;
@@ -22,21 +28,40 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+    protected ArrayList<String> items;
+    protected Spinner dropdown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         setTitle("Menu Principal");
 
+        items = new ArrayList<>();
+
         View ViewAutomoveis = findViewById(R.id.automoveis);
         View ViewServicos = findViewById(R.id.servicos);
         ImageView imagePerfil = findViewById(R.id.perfil);
+        dropdown = findViewById(R.id.spinnerCidade);
+
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                cidadeescolhida = cidades.get(position).clone();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         imagePerfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,24 +115,49 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
-        DatabaseReference myRef = database.getReference("servicos");
-        services = new ArrayList<>();
+        DatabaseReference myRef = database.getReference("cidades");
+        cidades = new ArrayList<>();
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
-                    Servicos value = servicoSnapshot.getValue(Servicos.class);
-                    if (value != null) {
-                        services.add(new Servicos(value.getIcon(), value.getNome(),value.getWhatsapp(),value.getX(), value.getY(), value.getEmail(),value.getTipo()));
+                for (DataSnapshot cidadeSnapshot : dataSnapshot.getChildren()) {
+                    Cidade cidade = cidadeSnapshot.getValue(new GenericTypeIndicator<Cidade>() {});
+
+                    if (cidade != null) {
+                        String nomeCidade = cidade.getNome();
+                        List<Servico> servicos = cidade.getServicos();
+                        if (cidadeSnapshot.hasChild("servicos")) {
+                            for (DataSnapshot servicoSnapshot : cidadeSnapshot.child("servicos").getChildren()) {
+                                Servico servico = servicoSnapshot.getValue(Servico.class);
+                                if (servico != null) {
+                                    Log.d("SERVICO", "Nome: "+servico.getNome());
+                                }
+                            }
+                        }
+
                     }
+
+                    cidades.add(cidade.clone());
+                    items.add(cidade.getNome());
+
                 }
+
+                cidadeescolhida = cidades.get(0).clone();
+                Log.d("ESCOLHIDO", "Servicos da Cidade escolhida: "+cidadeescolhida.getNome()+cidadeescolhida.getServicos().get(0).getNome());
+                AtualizarDropdown();
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w("TESTE", "Failed to read value.", error.toException());
+                Log.d("TESTE", "Failed to read value.", error.toException());
             }
         });
+    }
+
+    public void AtualizarDropdown(){
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
     }
 }

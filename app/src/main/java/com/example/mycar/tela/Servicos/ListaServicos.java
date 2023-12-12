@@ -1,7 +1,7 @@
 package com.example.mycar.tela.Servicos;
 
-import static com.example.mycar.classes.Variaveis.database;
-import static com.example.mycar.classes.Variaveis.services;
+import static com.example.mycar.classes.Variaveis.cidadeescolhida;
+import static com.example.mycar.classes.Variaveis.cidades;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,24 +9,17 @@ import androidx.core.content.ContextCompat;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.telephony.ServiceState;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.example.mycar.R;
 import com.example.mycar.classes.AdapterServicos;
-import com.example.mycar.classes.Servicos;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.example.mycar.classes.Servico;
 
-import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaServicos extends AppCompatActivity {
 
@@ -41,7 +34,7 @@ public class ListaServicos extends AppCompatActivity {
         setContentView(R.layout.activity_lista_servicos);
         setTitle("Lista de Serviços");
         filtroAtivado = false;
-        atualizaAdapter(services);
+        atualizaAdapter(cidadeescolhida.getServicos());
 
         postodegasolina = findViewById(R.id.postodegasolina);
         postodegasolina.setOnClickListener(new View.OnClickListener() {
@@ -108,26 +101,26 @@ public class ListaServicos extends AppCompatActivity {
     }
 
     public void filtrarServicos(String tipo){
-        ArrayList<Servicos> servicosFiltrados = new ArrayList<Servicos>();
+        ArrayList<Servico> servicoFiltrados = new ArrayList<Servico>();
 
         boolean hasType = false;
-        for (Servicos servico: services ) {
+        for (Servico servico: cidadeescolhida.getServicos() ) {
 
             Log.d("Teste 2","Tipo: " + servico.getTipo().toString());
             if (servico.getTipo().contains(tipo) ) {
                 hasType = true;
             }
             if (hasType == true) {
-                servicosFiltrados.add(servico);
+                servicoFiltrados.add(servico);
                 hasType = false;
             }
         }
 
-        atualizaAdapter(servicosFiltrados);
+        atualizaAdapter(servicoFiltrados);
     }
 
-    public void atualizaAdapter(ArrayList<Servicos> servicosFiltrados){
-        AdapterServicos adapter = new AdapterServicos(this, servicosFiltrados);
+    public void atualizaAdapter(List<Servico> servicoFiltrados){
+        AdapterServicos adapter = new AdapterServicos(this, servicoFiltrados);
         GridView listViewServices = findViewById(R.id.gridview);
         listViewServices.setAdapter(adapter);
     }

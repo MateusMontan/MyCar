@@ -16,16 +16,16 @@ import com.example.mycar.tela.Servicos.Info_Servicos;
 
 import java.util.List;
 
-public class AdapterServicos extends ArrayAdapter<Servicos> {
+public class AdapterServicos extends ArrayAdapter<Servico> {
 
-    public AdapterServicos(Context context, List<Servicos> services) {
+    public AdapterServicos(Context context, List<Servico> services) {
         super(context, 0, services);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Obter o objeto Service para esta posição
-        Servicos service = getItem(position);
+        Servico service = getItem(position);
 
         // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
         if (convertView == null) {
