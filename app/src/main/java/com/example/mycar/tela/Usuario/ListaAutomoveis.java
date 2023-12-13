@@ -4,14 +4,18 @@ import static com.example.mycar.classes.Variaveis.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.mycar.R;
 import com.example.mycar.classes.AdapterAutomoveis;
 import com.example.mycar.classes.Automovel;
+import com.example.mycar.tela.Login.Cadastro;
+import com.example.mycar.tela.Login.Login;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaAutomoveis extends AppCompatActivity {
 
@@ -35,24 +40,16 @@ public class ListaAutomoveis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_automoveis);
         setTitle("Lista de Automóveis");
-
-
         listViewCarros = findViewById(R.id.listViewCarros);
         listViewCaminhoes = findViewById(R.id.listViewCaminhoes);
         listViewMotos = findViewById(R.id.listViewMotos);
-
         database =  FirebaseDatabase.getInstance();
-
         DatabaseReference reference_carros = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros");
         carros = new ArrayList<>();
-
         DatabaseReference reference_caminhoes = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/caminhoes");
         caminhoes = new ArrayList<>();
-
         DatabaseReference reference_motos = database.getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/motos");
         motos = new ArrayList<>();
-
-
         reference_carros.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -72,7 +69,6 @@ public class ListaAutomoveis extends AppCompatActivity {
                 Log.w("TESTE", "Failed to read value.", error.toException());
             }
         });
-
         reference_caminhoes.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,7 +88,6 @@ public class ListaAutomoveis extends AppCompatActivity {
                 Log.w("TESTE", "Failed to read value.", error.toException());
             }
         });
-
         reference_motos.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -110,6 +105,16 @@ public class ListaAutomoveis extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w("TESTE", "Failed to read value.", error.toException());
+            }
+        });
+
+        Button criarVeiculo = findViewById(R.id.adicionarVeiculo);
+
+        criarVeiculo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListaAutomoveis.this, AdicionarAutomoveis.class);
+                startActivity(intent);
             }
         });
     }
