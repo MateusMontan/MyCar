@@ -146,7 +146,6 @@
         android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="EX: ONIX"
-        android:inputType="date"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"
