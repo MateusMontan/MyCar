@@ -7,6 +7,7 @@ import static com.example.mycar.tela.Usuario.ListaAutomoveis.motos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,8 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.mycar.MenuPrincipal;
 import com.example.mycar.R;
 import com.example.mycar.classes.Automovel;
+import com.example.mycar.tela.Login.Login;
 import com.google.firebase.database.DatabaseReference;
 
 public class AdicionarAutomoveis extends AppCompatActivity {
@@ -73,6 +76,11 @@ public class AdicionarAutomoveis extends AppCompatActivity {
                 DatabaseReference refAutomovel = database.getReference("usuarios/" + idUsuario + "/automoveis/" + tipoVeiculo);
                 DatabaseReference novoAutomovelRef = refAutomovel.child(index);
                 novoAutomovelRef.setValue(temp);
+
+                Intent intent = new Intent(AdicionarAutomoveis.this, MenuPrincipal.class);
+                startActivity(intent);
+
+                finish();
 
             }
         });
