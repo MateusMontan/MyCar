@@ -2,14 +2,19 @@ package com.example.mycar.tela.Servicos;
 
 import static com.example.mycar.classes.Variaveis.servicoescolhido;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,8 +33,8 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
 
     private GoogleMap mMap;
     private TextView textView;
-    private ImageView iconImageView;
-    private ImageView imageView3;
+    private ImageView iconeWhatsapp;
+    private ImageView iconeTelefoneLigar;
 
     private ImageView imageView5;
 
@@ -44,34 +49,45 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         setContentView(R.layout.activity_info_servicos);
 
         textView = findViewById(R.id.textNomeServico);
-        iconImageView = findViewById(R.id.ImageViewWhatsapp);
-        imageView3 = findViewById(R.id.ImageViewLigar);
+        iconeWhatsapp = findViewById(R.id.ImageViewWhatsapp);
+        iconeTelefoneLigar = findViewById(R.id.ImageViewLigar);
         imageView5 = findViewById(R.id.imageViewEmail);
         //imageLogo = findViewById(R.id.ImageViewServico);
 
         textView.setText(servicoescolhido.getNome());
+
+        if(servicoescolhido.getWhatsapp().isEmpty()){
+            aplicarFiltroPretoBranco();
+        }
         //imageLogo.setImageResource(getResources().getIdentifier(servicoescolhido.getIcon(), "drawable", getPackageName()));
 
 
-        iconImageView.setOnClickListener(new View.OnClickListener() {
+        iconeWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String numerotelefone = servicoescolhido.getWhatsapp();
-                String mensagem = "Olá!";
-                String mensagemcodificada = Uri.encode(mensagem);
-                String url = "https://wa.me/+" + numerotelefone + "?text=" + mensagemcodificada;
+                if(!servicoescolhido.getWhatsapp().isEmpty()){
+                    String numerotelefone = servicoescolhido.getWhatsapp();
+                    String mensagem = "Olá!";
+                    String mensagemcodificada = Uri.encode(mensagem);
+                    String url = "https://wa.me/+" + numerotelefone + "?text=" + mensagemcodificada;
 
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
 
-                startActivity(intent);
+                    startActivity(intent);
+                }else{
+                    showPopup();
+                }
             }
         });
 
-        imageView3.setOnClickListener(new View.OnClickListener() {
+        iconeTelefoneLigar.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 String numeroTelefone = servicoescolhido.getWhatsapp();
+                if(servicoescolhido.getWhatsapp() == "") {
+                    numeroTelefone = servicoescolhido.getTelefone();
+                }
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + numeroTelefone));
                 startActivity(intent);
@@ -81,26 +97,6 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-//        imageView4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Intent.ACTION_SENDTO);
-//                intent.setData(Uri.parse("mailto:"));
-//
-//                String textoemail = servicoescolhido.getEmail();
-//                intent.putExtra(Intent.EXTRA_EMAIL, textoemail);
-//                intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto do E-mail");
-//                intent.putExtra(Intent.EXTRA_TEXT, "Corpo do E-mail");
-//
-//                if (intent.resolveActivity(getPackageManager()) != null) {
-//                    startActivity(intent);
-//                } else {
-//                    Toast.makeText(Info_Servicos.this, "Nenhum aplicativo de e-mail disponível", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
 
         imageView5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +125,27 @@ public class Info_Servicos extends AppCompatActivity implements OnMapReadyCallba
         float zoomLevel = 17.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(local, zoomLevel));
 
+    }
+
+    public void showPopup() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Sem WhatsApp no momento!")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Faça algo se o usuário clicar em OK
+                    }
+                });
+        // Crie e exiba o AlertDialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void aplicarFiltroPretoBranco() {
+        ColorMatrix matrix = new ColorMatrix();
+        matrix.setSaturation(0); // Define a saturação para 0 para remover a cor
+
+        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+        iconeWhatsapp.setColorFilter(filter); // Aplica o filtro à ImageView
     }
 
 }

@@ -18,6 +18,8 @@ public class Servico implements Cloneable{
     private String nome;
     private String email;
     private String whatsapp;
+
+    private String telefone;
     private String x;
     private String y;
     private String icon;
@@ -28,6 +30,14 @@ public class Servico implements Cloneable{
 
     public String getX() {
         return x;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getTelefone() {
+        return telefone;
     }
 
     public void setY(String y) {

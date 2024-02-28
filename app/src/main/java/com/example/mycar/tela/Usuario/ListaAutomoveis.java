@@ -4,12 +4,16 @@ import static com.example.mycar.classes.Variaveis.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mycar.R;
 import com.example.mycar.classes.AdapterAutomoveis;
@@ -24,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class ListaAutomoveis extends AppCompatActivity {
 
@@ -94,7 +99,7 @@ public class ListaAutomoveis extends AppCompatActivity {
                 for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
                     Automovel value = servicoSnapshot.getValue(Automovel.class);
                     if (value != null) {
-                        motos.add(new Automovel(value.getCategoria(),value.getCor(),value.getMarca(),
+                            motos.add(new Automovel(value.getCategoria(),value.getCor(),value.getMarca(),
                                 value.getModelo(),value.getPlaca()));
                     }
                 }
@@ -117,15 +122,17 @@ public class ListaAutomoveis extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //exibirPopUp();
     }
 
     public void atualizaCarrosAdapter(){
-        AdapterAutomoveis adapter = new AdapterAutomoveis(this, carros);
+        //AdapterAutomoveis adapter = new AdapterAutomoveis(this, carros, exibirPopUp);
         if(carros.isEmpty()){
             listViewCarros.setVisibility(View.INVISIBLE);
         }else{
             listViewCarros.setVisibility(View.VISIBLE);
-            listViewCarros.setAdapter(adapter);
+            //listViewCarros.setAdapter(adapter);
         }
     }
 
@@ -148,4 +155,31 @@ public class ListaAutomoveis extends AppCompatActivity {
             listViewMotos.setAdapter(adapter);
         }
     }
+
+//    public static void exibirPopUp() {
+//        // Cria um objeto Dialog sem um título padrão
+//        final Dialog dialog = new Dialog(this);
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.setContentView(R.layout.popup_layout);
+//
+//        // Referências aos elementos de UI no layout do pop-up
+//        TextView textView = dialog.findViewById(R.id.textView);
+//        Button btnFechar = dialog.findViewById(R.id.btnFechar);
+//
+//        // Define o texto do TextView conforme necessário
+//        textView.setText("Conteúdo do Pop-up");
+//
+//        // Configura o botão para fechar o pop-up
+//        btnFechar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Lógica a ser executada ao clicar no botão Fechar
+//                Toast.makeText(ListaAutomoveis.this, "Pop-up fechado", Toast.LENGTH_SHORT).show();
+//                dialog.dismiss(); // Fecha o pop-up
+//            }
+//        });
+//
+//        // Exibe o pop-up
+//        dialog.show();
+//    }
 }
